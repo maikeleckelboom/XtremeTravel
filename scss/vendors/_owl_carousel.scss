@@ -1,0 +1,75 @@
+@import '../abstracts/base';
+.owl-stage {
+  //display: flex;
+  //justify-content: center;
+}
+
+
+
+
+
+
+
+//
+//.owl-carousel .owl-stage-outer {
+//  padding: 32px 24px;
+//}
+//
+//.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+//  height: 100% !important;
+//  width: rem-calc(40);
+//  right: rem-calc(-1);
+//}
+//
+//.owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+//  left: rem-calc(2);
+//}
+//
+//.owl-carousel {
+//
+//  //button {
+//  //  height: 100%;
+//  //  width: rem-calc(40);
+//  //
+//  //
+//  //  svg {
+//  //    background: white;
+//  //    height: rem-calc(28);
+//  //    width: rem-calc(28);
+//  //    padding: rem-calc(5);
+//  //    border-radius: rem-calc(2);
+//  //    box-shadow: 0 0 0 rem-calc(1) rgba(235, 235, 235, 0.1);
+//  //    &:hover {
+//  //      box-shadow: 0 0 0 rem-calc(2) rgba(235, 235, 235, 0.1);
+//  //    }
+//  //  }
+//  //}
+//
+//  .owl-next, .owl-prev {
+//    width: rem-calc(22);
+//    height: rem-calc(20);
+//    top: 50%;
+//    transform: translate(0%, -50%);
+//    position: absolute;
+//
+//    &:hover, &:focus {
+//      background: inherit;
+//      color: inherit;
+//    }
+//
+//    &.disabled {
+//      opacity: 0;
+//    }
+//  }
+//
+//  .owl-prev {
+//    left: rem-calc(4);
+//  }
+//  .owl-next {
+//    right: rem-calc(12);
+//  }
+//
+//  .owl-stage {
+//    padding-left: 0 !important;
+//  }
+//}

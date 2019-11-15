@@ -1,0 +1,150 @@
+@import '../abstracts/base';
+
+.header {
+  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0,0,0,.1);
+  width: 100%;
+  height: rem-calc(60);
+  background: white;
+  z-index: 3;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background: #fff;
+
+    a {
+      display: block;
+      padding: rem-calc(20) rem-calc(20);
+      border-right: rem-calc(1) solid #f4f4f4;
+      text-decoration: none;
+      color: #000;
+    }
+
+    li a:hover,
+    .header .menu-btn:hover {
+      background: #f4f4f4;
+    }
+
+    .mobile-only {
+      display: block;
+    }
+
+  }
+
+  .logo {
+    display: block;
+    float: left;
+    font-size: rem-calc(32);
+    padding: rem-calc(10) rem-calc(20);
+    text-decoration: none;
+    color: #000;
+    span {
+      color: #ff3840;
+    }
+  }
+
+  .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: rem-calc(28) rem-calc(20);
+    position: relative;
+    user-select: none;
+
+    .nav-icon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px;
+
+      &::before, &::after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+
+      &::before {
+        top: rem-calc(5);
+      }
+
+      &::after {
+        top: rem-calc(-5);
+      }
+    }
+  }
+
+  .menu-btn {
+    display: none;
+
+    &:checked {
+      ~ .menu {
+        max-height: rem-calc(480);
+      }
+
+      ~ .menu-icon {
+        .nav-icon {
+          background: transparent;
+
+          &::before {
+            transform: rotate(-45deg);
+          }
+
+          &::after {
+            transform: rotate(45deg);
+          }
+        }
+
+        &:not(.steps) .nav-icon::before,
+        &:not(.steps) .nav-icon::after {
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: em-calc(1400)) {
+  .center {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .header {
+    li {
+      float: left;
+
+      &.mobile-only {
+        display: none;
+      }
+
+      a {
+        padding: rem-calc(20) rem-calc(30);
+      }
+    }
+
+    .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+}

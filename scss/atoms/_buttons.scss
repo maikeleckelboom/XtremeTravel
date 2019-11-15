@@ -1,0 +1,63 @@
+@import '../abstracts/base';
+
+// Primray button styles
+.button {
+  margin: rem-calc(8) 0 rem-calc(8) rem-calc(8);
+  height: rem-calc(38);
+  width: rem-calc(128);
+  background: #2a49a5;
+  color: #fff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  border-radius: rem-calc(3);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease-in;
+  &:hover {
+    background: transparentize(#3156d4, 0.2);
+    transition: all 0.15s ease-in;
+    cursor: pointer;
+    color: white;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+// Ripple effect
+.ripple {
+  border-radius: 50%;
+  background: mix(#0594b9, white);
+  position: absolute;
+  transform: scale(0);
+  opacity: 1;
+  animation: ripple 0.4s linear;
+}
+
+
+// Keyframes ripple
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+// Keyframes Scale
+@keyframes scl {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.9) translateX(-50px);
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: scaleX(1) translateX(0);
+    opacity: 1;
+  }
+}

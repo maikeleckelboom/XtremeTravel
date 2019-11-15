@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Jquery import (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <!-- Owl Carousel JS import (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Owl Carousel CSS import (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet"
+          type="text/css">
+    <!-- app.css -->
+    <link rel="stylesheet" href="../css/app.css">
+    <!-- Title -->
+    <title>Grid-layout</title>
+</head>
+<body>
+
+<!-- Omliggende grid container -->
+<div class="grid-container">
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Sub-grid voor het alignen van de childeren tegen de gridlijnen van de parent -->
+        <div class="sub-grid">
+            <!-- Logo -->
+            <a href="../index.html" class="logo"><span>X</span>treemTravel</a>
+            <!-- Hamburger Menu -->
+            <input class="menu-btn" type="checkbox" id="menu-btn">
+            <label class="menu-icon" for="menu-btn">
+                <span class="nav-icon"></span>
+            </label>
+            <!-- Menu navigatie lijst -->
+            <ul class="menu">
+                <li class="mobile-only"><a href="#">Home</a></li>
+                <li><a href="../pages/windsurfing.html">Windsurfing</a></li>
+                <li><a href="../pages/mountainclimbing.html">Mountainclimbing</a></li>
+                <li><a href="../pages/snorkelen.html">Snorkelen</a></li>
+                <li><a href="../pages/lastminutes.html">Last minutes</a></li>
+                <li class="on-mobile"><a href="../pages/about.html">Over ons</a></li>
+                <li class="on-mobile"><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Parallax.js voor een parallax effect op de banner -->
+    <div class="parallax">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="../files/banner-3.jpg">
+            <div class="sub-grid">
+
+            </div>
+        </div>
+    </div>
+
+    <aside>
+        <!-- Call to action button -->
+        <button type='button' class="button"><a href="#">Last Minutes</a></button>
+        <span>Extra voordeel met de Last Minutes</span>
+    </aside>
+
+    <div class="content">
+        <!-- Call to action buttons -->
+        <button type='button' class="button"><a href="#">Over ons</a></button>
+        <button type='button' class="button"><a href="#" class="smooth-scroll">Contact</a></button>
+    </div>
+
+    <main>
+        About
+    </main>
+
+
+
+    <!-- Footer met sub-grid -->
+    <footer>
+        <div class="sub-grid">
+
+        </div>
+    </footer>
+</div>
+
+
+<!-- Scroll to anchor -->
+<script src="../js/scroll.js"></script>
+<!-- Ripple effect -->
+<script src="../js/ripple.js"></script>
+<!-- Import parallax.js vendor -->
+<script src="../vendor/parallax/parallax.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,123 @@
+// Allereerst ben begonnen met het in elkaar zetten van de grid
+// Dit bestand word niet meer gebruikt in dit project
+// 07-11-2019
+
+@import '../abstracts/base';
+
+// Grid-layout
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+
+  header {
+    background: rgb(148, 204, 108);
+    grid-row: 1/2;
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    .sub-grid {
+      grid-column: 2/6;
+    }
+  }
+
+  .parallax {
+    background: #06aeda;
+    grid-row: 2/3;
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    .sub-grid {
+      grid-column: 2/6;
+    }
+  }
+
+  aside {
+    background: lightsalmon;
+    grid-row: 3/4;
+    grid-column: 2/4;
+  }
+
+  main {
+    background: lightblue;
+    grid-row: 4/5;
+    grid-column: 2/6;
+  }
+
+  .content {
+    grid-row: 3/4;
+    grid-column: 4/6;
+    background: #ff3840;
+  }
+
+  .contact {
+    grid-row: 5/6;
+    grid-column: 2/6;
+    background: royalblue;
+  }
+
+  footer {
+    background: #ffbf61;
+    grid-row: 6/7;
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    .sub-grid {
+      grid-column: 2/6;
+    }
+  }
+}
+
+@media (max-width: em-calc(768)) {
+  .grid-container {
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  }
+
+
+  .grid-container aside {
+    grid-row: 3/4;
+    grid-column: 2/6;
+  }
+
+  .grid-container .content {
+    grid-row: 4/5;
+    grid-column: 2/6;
+  }
+
+  .grid-container main {
+    grid-row: 5/6;
+  }
+
+  .grid-container .contact {
+    grid-row: 6/7;
+  }
+
+  .grid-container footer {
+    grid-row: 7/8;
+  }
+
+  .grid-container header,
+  .grid-container footer,
+  .grid-container .parallax{
+    grid-template-columns: repeat(10, 1fr);
+
+  }
+
+  .grid-container header .sub-grid,
+  .grid-container footer .sub-grid,
+  .grid-container .parallax .sub-grid {
+    grid-column: 2/6;
+  }
+}
+
+@media (max-width: em-calc(468)) {
+  .grid-container {
+    grid-template-columns: 0 1fr 1fr 1fr 1fr 0;
+  }
+
+  .grid-container header .sub-grid,
+  .grid-container footer .sub-grid,
+  .grid-container .parallax .sub-grid {
+    grid-column: 1/6;
+  }
+}

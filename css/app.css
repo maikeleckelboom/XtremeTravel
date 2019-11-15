@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+.button {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  height: 2.375rem;
+  width: 8rem;
+  background: #2a49a5;
+  color: #fff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  border-radius: 0.1875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease-in; }
+  .button:hover {
+    background: rgba(49, 86, 212, 0.8);
+    transition: all 0.15s ease-in;
+    cursor: pointer;
+    color: white; }
+  .button a {
+    color: white;
+    text-decoration: none; }
+
+.ripple {
+  border-radius: 50%;
+  background: #82cadc;
+  position: absolute;
+  transform: scale(0);
+  opacity: 1;
+  animation: ripple 0.4s linear; }
+
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0; } }
+@keyframes scl {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.9) translateX(-50px); }
+  75% {
+    opacity: 0.2; }
+  100% {
+    transform: scaleX(1) translateX(0);
+    opacity: 1; } }
+.card {
+  box-sizing: border-box;
+  box-shadow: 0.125rem 0.125rem 1.25rem 0 rgba(0, 0, 0, 0.29);
+  border-radius: 0.1875rem;
+  margin: 1.375rem 1.5%;
+  animation: scl 0.5s ease-in-out;
+  transform-origin: left center;
+  background: #fff;
+  min-width: 12.5rem;
+  width: 100%; }
+  @media screen and (min-width: 480px) {
+    .card {
+      width: 47%; } }
+  @media screen and (min-width: 1200px) {
+    .card {
+      width: 30%; } }
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0.25rem; }
+  .card-title {
+    margin-top: -2.25rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    color: #fff;
+    font-size: 1.5rem; }
+  .card-image {
+    width: 100%;
+    height: 10.125rem; }
+  .card-desc {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-bottom: 0.0625rem solid rgba(128, 128, 128, 0.3);
+    height: 4.6875rem;
+    overflow: hidden; }
+  .card-price {
+    position: relative; }
+    .card-price span {
+      background: #fdc966;
+      padding: 0.25rem 0.375rem;
+      margin: 0.5rem;
+      position: absolute;
+      top: -9rem;
+      right: 0;
+      font-size: 1.125rem;
+      border-radius: 0.1875rem;
+      text-shadow: 0.0625rem 0.03125rem 0.0125rem #fff6;
+      transform: rotate(3deg); }
+  .card-action-read-more {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    height: 2.375rem;
+    width: 8rem;
+    background: #A43ECC;
+    border: none;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    border-radius: 0.1875rem;
+    background: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: box-shadow 0.3s ease-in; }
+    .card-action-read-more.book-now {
+      background: #2a49a5;
+      color: #fff; }
+    .card-action-read-more:hover {
+      background: rgba(49, 86, 212, 0.8);
+      transition: all 0.15s ease-in;
+      cursor: pointer;
+      color: white; }
+  .card-action:hover {
+    box-shadow: 0.4375rem 0.4375rem 0.9375rem 0.125rem rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in; }
+
+.last-minutes, .bookings {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap; }
+  .last-minutes h1, .bookings h1 {
+    width: 100%;
+    font-size: 1.125rem;
+    margin: 0.625rem 0 1.25rem 0.75rem; }
+
+.contact h1 {
+  width: 100%;
+  font-size: 1.25rem;
+  margin-bottom: 1.125rem; }
+
+input, select, textarea {
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: none;
+  border: solid 0.0625rem lightgray;
+  font-family: 'Muli', sans-serif; }
+
+.material-type-form {
+  padding: 2.125rem;
+  background: white;
+  box-shadow: 0.125rem 0.125rem 1.25rem 0 rgba(81, 81, 81, 0.24); }
+
+.contact {
+  max-width: 43.75rem;
+  margin: 1.25rem;
+  width: 95%; }
+  .contact p {
+    width: 76%; }
+  .contact .contact-form {
+    width: 100%; }
+    .contact .contact-form button.book-now {
+      margin-top: 0.75rem; }
+    .contact .contact-form .field {
+      position: relative;
+      min-height: 3.875rem;
+      margin-top: 0.625rem; }
+      .contact .contact-form .field input {
+        padding-top: 1.25rem; }
+      .contact .contact-form .field textarea {
+        padding-top: 0; }
+      .contact .contact-form .field.textarea {
+        margin-top: 2.625rem;
+        padding-bottom: 0.5rem; }
+    .contact .contact-form .field-label {
+      top: 0;
+      margin: -3.625rem 0;
+      display: block;
+      color: #737373;
+      line-height: 62px;
+      height: 24px;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      transition: font-size .15s, line-height .15s; }
+      .contact .contact-form .field-label.textarea {
+        margin-top: -5.125rem; }
+    .contact .contact-form .field-input,
+    .contact .contact-form .field-textarea {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+      line-height: 1rem;
+      font-size: 1rem;
+      background: transparent;
+      border: none;
+      -webkit-appearance: none;
+      outline: none; }
+    .contact .contact-form .field-input {
+      height: 2rem; }
+    .contact .contact-form .field-label::after,
+    .contact .contact-form .field::before {
+      content: '';
+      height: 0.125rem;
+      width: 100%;
+      position: absolute;
+      bottom: 0.375rem;
+      left: 0;
+      background-color: #DDD; }
+    .contact .contact-form .field-label::after {
+      bottom: 0.375rem;
+      background-color: #2191ea;
+      transform: scaleX(0);
+      transition: transform 0.3s; }
+    .contact .contact-form .field-input:invalid:focus ~ .field-label,
+    .contact .contact-form .field-textarea:invalid:focus ~ .field-label,
+    .contact .contact-form .field-input:valid ~ .field-label,
+    .contact .contact-form .field-textarea:valid ~ .field-label {
+      font-size: 0.75rem;
+      line-height: 0.875rem; }
+    .contact .contact-form .field-input:focus ~ .field-label,
+    .contact .contact-form .field-textarea:focus ~ .field-label {
+      color: #2191ea; }
+    .contact .contact-form .field-input:focus ~ .field-label::after,
+    .contact .contact-form .field-textarea:focus ~ .field-label::after {
+      transform: scaleX(1); }
+
+.header {
+  box-shadow: 0.0625rem 0.0625rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 3.75rem;
+  background: white;
+  z-index: 3; }
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background: #fff; }
+    .header ul a {
+      display: block;
+      padding: 1.25rem 1.25rem;
+      border-right: 0.0625rem solid #f4f4f4;
+      text-decoration: none;
+      color: #000; }
+    .header ul li a:hover,
+    .header ul .header .menu-btn:hover {
+      background: #f4f4f4; }
+    .header ul .mobile-only {
+      display: block; }
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2rem;
+    padding: 0.625rem 1.25rem;
+    text-decoration: none;
+    color: #000; }
+    .header .logo span {
+      color: #ff3840; }
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out; }
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 1.75rem 1.25rem;
+    position: relative;
+    user-select: none; }
+    .header .menu-icon .nav-icon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px; }
+      .header .menu-icon .nav-icon::before, .header .menu-icon .nav-icon::after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%; }
+      .header .menu-icon .nav-icon::before {
+        top: 0.3125rem; }
+      .header .menu-icon .nav-icon::after {
+        top: -0.3125rem; }
+  .header .menu-btn {
+    display: none; }
+    .header .menu-btn:checked ~ .menu {
+      max-height: 30rem; }
+    .header .menu-btn:checked ~ .menu-icon .nav-icon {
+      background: transparent; }
+      .header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+        transform: rotate(-45deg); }
+      .header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+        transform: rotate(45deg); }
+    .header .menu-btn:checked ~ .menu-icon:not(.steps) .nav-icon::before, .header .menu-btn:checked ~ .menu-icon:not(.steps) .nav-icon::after {
+      top: 0; }
+
+@media (min-width: 87.5em) {
+  .center {
+    width: 80%;
+    margin: 0 auto; }
+
+  .header li {
+    float: left; }
+    .header li.mobile-only {
+      display: none; }
+    .header li a {
+      padding: 1.25rem 1.875rem; }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none; }
+  .header .menu-icon {
+    display: none; } }
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+  position: relative; }
+
+* {
+  margin: 0;
+  padding: 0; }
+  *::before, *::after {
+    box-sizing: border-box; }
+
+body {
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto; }
+  .grid-container header {
+    grid-row: 1/2;
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); }
+    .grid-container header .sub-grid {
+      grid-column: 2/6; }
+  .grid-container .parallax {
+    grid-row: 2/3;
+    grid-column: 1/7; }
+    .grid-container .parallax .parallax-window {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); }
+    .grid-container .parallax .sub-grid {
+      display: grid;
+      grid-column: 2/6; }
+    .grid-container .parallax .callout {
+      max-width: 70%; }
+      .grid-container .parallax .callout p {
+        background: white;
+        border-radius: 0.1875rem;
+        max-height: 25rem;
+        box-shadow: 0.0625rem 0.0625rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+        padding: 0.75rem;
+        margin: 1.125rem; }
+  .grid-container aside {
+    grid-row: 3/4;
+    grid-column: 2/4;
+    background: none; }
+    .grid-container aside span {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      display: inline-block; }
+    @media screen and (max-width: 1023px) {
+      .grid-container aside {
+        background: #f8f8f8; } }
+  .grid-container main {
+    grid-row: 4/5;
+    grid-column: 2/6; }
+  .grid-container .content {
+    grid-row: 3/4;
+    grid-column: 4/6;
+    padding: 0 0.625rem;
+    display: flex;
+    justify-content: flex-end;
+    background: none; }
+    @media screen and (max-width: 1023px) {
+      .grid-container .content {
+        background: #f8f8f8; } }
+  .grid-container .contact {
+    grid-row: 5/6;
+    grid-column: 2/6;
+    justify-self: center; }
+  .grid-container footer {
+    grid-row: 6/7;
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    min-height: 3.75rem;
+    box-shadow: 0.0625rem 0.0625rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 3.75rem;
+    background: #fff;
+    margin-top: 2.5rem; }
+    .grid-container footer .sub-grid {
+      grid-column: 2/6;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+
+.on-mobile {
+  display: none; }
+  @media screen and (max-width: 1199px) {
+    .on-mobile {
+      display: block; } }
+
+@media (max-width: 63.9375em) {
+  .grid-container {
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr; }
+    .grid-container header {
+      grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr; } }
+@media (max-width: 83.75em) {
+  .grid-container {
+    grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 0.4fr; }
+    .grid-container header {
+      grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 0.4fr; } }
+@media (max-width: 48em) {
+  .grid-container {
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr; }
+    .grid-container header .sub-grid,
+    .grid-container footer .sub-grid,
+    .grid-container .parallax-window .sub-grid {
+      grid-column: 1/7; }
+    .grid-container footer {
+      grid-row: 7/8; }
+    .grid-container aside {
+      grid-row: 3/4;
+      grid-column: 1/7; }
+    .grid-container main {
+      grid-row: 5/6;
+      grid-column: 1/7; }
+    .grid-container .parallax-window {
+      grid-template-columns: repeat(10, 1fr); }
+    .grid-container .content {
+      grid-row: 4/5;
+      grid-column: 1/7; }
+    .grid-container .contact {
+      grid-row: 6/7;
+      grid-column: 1/7;
+      justify-self: center; } }
+@media (max-width: 29.25em) {
+  .grid-container {
+    grid-template-columns: 0 1fr 1fr 1fr 1fr 0; }
+    .grid-container header .sub-grid,
+    .grid-container footer .sub-grid,
+    .grid-container .parallax .sub-grid {
+      grid-column: 1/11; } }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,33 @@
+// Settings die worden gebruikt door mixins
+
+// Breakpoints
+$breakpoints: (
+        mobile: (
+                min: none,
+                max: 479px
+        ),
+        smartphone: (
+                min: 480px,
+                max: 639px
+        ),
+        phablet: (
+                min: 640px,
+                max: 767px
+        ),
+        tablet: (
+                min: 768px,
+                max: 1023px
+        ),
+        laptop: (
+                min: 1024px,
+                max: 1199px
+        ),
+        desktop: (
+                min: 1200px,
+                max: 1439px
+        ),
+        widescreen: (
+                min: 1440px,
+                max: none
+        ),
+);

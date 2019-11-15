@@ -1,0 +1,59 @@
+// Bereken REM units op basis van pixels
+@function rem-calc($val) {
+  $result: $val / 16;
+  @return #{$result}rem;
+}
+
+// Bereken EM units op basis van pixels
+@function em-calc($val) {
+  $result: $val / 16;
+  @return #{$result}em;
+}
+
+// Variables
+$blue: #0052CC;
+
+// Mixin voor het verkorten en makkelijker gebruiken van media queries
+// (set-breakpoints)
+@mixin set-breakpoint($object, $break: only) {
+  @if map-has-key($breakpoints, $object) {
+    @if $break == only {
+      $val1 : map-get(map-get($breakpoints, $object), min);
+      $val2 : map-get(map-get($breakpoints, $object), max);
+      @if $object == mobile {
+        @media screen and (max-width: $val2) {
+          @content;
+        }
+      } @elseif $object == widescreen {
+        @media screen and (min-width: $val1) {
+          @content;
+        }
+      } @else {
+        @media screen and (min-width: $val1) and (max-width: $val2) {
+          @content;
+        }
+      }
+    } @elseif $break == up {
+      $val : map-get(map-get($breakpoints, $object), min);
+      @if $object != mobile {
+        @media screen and (min-width: $val) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    } @elseif $break == down {
+      $val : map-get(map-get($breakpoints, $object), max);
+      @if $object != widescreen {
+        @media screen and (max-width: $val) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  }
+  @else {
+    @warn 'Unknown {$object} in {$breakpoints}';
+  }
+}

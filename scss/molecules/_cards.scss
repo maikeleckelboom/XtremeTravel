@@ -1,0 +1,152 @@
+@import '../abstracts/base';
+
+// Primray card Styles
+.card {
+  box-sizing: border-box;
+  box-shadow: rem-calc(2) rem-calc(2) rem-calc(20) 0 transparentize(rgba(0, 0, 0, 0.59), 0.3);
+  border-radius: rem-calc(3);
+  margin: rem-calc(22) 1.5%;
+  animation: scl 0.5s ease-in-out;
+  transform-origin: left center;
+  background: #fff;
+
+  min-width: rem-calc(200);
+
+  // Vanaf mobiel kleinscherm en hoger
+  @include set-breakpoint(mobile, up) {
+    width: 100%;
+  }
+
+  // Vanaf mobiel grootscherm en hoger
+  @include set-breakpoint(smartphone, up) {
+    width: 47%;
+  }
+
+  // Vanaf desktop scherm en hoger
+  @include set-breakpoint(desktop, up) {
+    width: 30%;
+  }
+
+  // Output: .card-actions
+  &-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 rem-calc(4);
+  }
+
+  // Output
+  // .card-title
+  &-title {
+    margin-top: rem-calc(-36);
+    padding-bottom: rem-calc(8);
+    padding-left: rem-calc(8);
+    color: #fff;
+    font-size: rem-calc(24);
+  }
+
+  // Output: .card-image
+  &-image {
+    width: 100%;
+    height: rem-calc(162);
+  }
+
+  // Output
+  // .card-desc
+  &-desc {
+    padding: rem-calc(8) rem-calc(8) rem-calc(8) rem-calc(8);
+    border-bottom: rem-calc(1) solid transparentize(grey, 0.7);
+    height: rem-calc(75);
+    overflow: hidden;
+  }
+
+  // Output
+  // .card-price
+  &-price {
+    // Position relative zodat op
+    // de onderliggende span
+    // position absolute gebruikt kan worden
+    position: relative;
+
+    span {
+      background: #fdc966;
+      padding: rem-calc(4) rem-calc(6);
+      margin: rem-calc(8);
+      position: absolute;
+      top: rem-calc(-144);
+      right: 0;
+      font-size: rem-calc(18);
+      border-radius: rem-calc(3);
+      text-shadow: 0.0625rem 0.03125rem 0.0125rem #fff6;
+      transform: rotate(3deg);
+    }
+  }
+
+  // Output
+  // .card-action
+  &-action {
+
+    // Output
+    // .card-action-read-more
+    &-read-more {
+      margin: rem-calc(8) 0 rem-calc(8) rem-calc(8);
+      height: rem-calc(38);
+      width: rem-calc(128);
+      background: #A43ECC;
+      border: none;
+      color: black;
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      border-radius: rem-calc(3);
+      background: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: box-shadow 0.3s ease-in;
+
+      // Output
+      // .card-action-read-more.book-now
+      &.book-now {
+        background: #2a49a5;
+        color: #fff;
+      }
+
+      // Output
+      // .card-action-read-more:hover
+      &:hover {
+        background: transparentize(#3156d4, 0.2);
+        transition: all 0.15s ease-in;
+        cursor: pointer;
+        color: white;
+      }
+    }
+
+    // Output
+    // .card-action:hover
+    &:hover {
+      box-shadow: rem-calc(7) rem-calc(7) rem-calc(15) rem-calc(2) transparentize(black, 0.5);
+      transition: box-shadow 0.3s ease-in;
+    }
+  }
+}
+
+// Sectie containers
+.last-minutes, .bookings {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+
+  h1 {
+    width: 100%;
+    font-size: rem-calc(18);
+    margin: rem-calc(10) 0 rem-calc(20) rem-calc(12);
+  }
+}
+
+.contact {
+  h1 {
+    width: 100%;
+    font-size: rem-calc(20);
+    margin-bottom: rem-calc(18);
+  }
+}
+
