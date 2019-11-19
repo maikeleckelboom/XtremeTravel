@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Jquery import (CDN) -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    <!-- Owl Carousel JS import (CDN) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- Owl Carousel CSS import (CDN) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet"
-          type="text/css">
+    <!-- Jquery import  -->
+    <script src="js/jquery.js"></script>
     <!-- app.css -->
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <!-- Fontawesomem 5 import -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <!-- Title -->
     <title>Grid-layout</title>
 </head>
@@ -23,18 +19,22 @@
 
     <!-- Header -->
     <header class="header">
+
         <!-- Sub-grid voor het alignen van de childeren tegen de gridlijnen van de parent -->
         <div class="sub-grid">
+
             <!-- Logo -->
             <a href="grid.html" class="logo"><span>X</span>treemTravel</a>
+
             <!-- Hamburger Menu -->
             <input class="menu-btn" type="checkbox" id="menu-btn">
             <label class="menu-icon" for="menu-btn">
                 <span class="nav-icon"></span>
             </label>
+
             <!-- Menu navigatie lijst -->
             <ul class="menu">
-                <li class="mobile-only"><a href="#">Home</a></li>
+                <li class="on-mobile"><a href="index.html">Home</a></li>
                 <li><a href="pages/windsurfing.html">Windsurfing</a></li>
                 <li><a href="pages/mountainclimbing.html">Mountainclimbing</a></li>
                 <li><a href="pages/snorkelen.html">Snorkelen</a></li>
@@ -42,33 +42,46 @@
                 <li class="on-mobile"><a href="#">Over ons</a></li>
                 <li class="on-mobile"><a href="#">Contact</a></li>
             </ul>
+
         </div>
     </header>
+
 
     <!-- Parallax.js voor een parallax effect op de banner -->
     <div class="parallax">
         <div class="parallax-window" data-parallax="scroll" data-image-src="files/climbing.jpg">
+
+            <!-- Subgrid -->
             <div class="sub-grid">
+
                 <!-- Overliggend tekstblok (welkom tekst)-->
                 <div class="callout">
+
                     <p>
                         Welkom bij <span>X</span>treemTravel, de online booking website voor de extreemste vakanties.
-                        Boek je
-                        vakantie nu
-                        voor de voordeligste bestemmingen. Ons specialisme: de actiefste vakanties voor windsurfers,
-                        snorkelaars
-                        en mountainclimbers op alle continenten.
+                        <a href="#">Boek je vakantie nu</a> voor de voordeligste bestemmingen.
+                        Ons specialisme: de actiefste vakanties op alle continenten
                     </p>
+
+                    <ul class="checkmark">
+                        <li><a href="pages/windsurfing.html">Windsurfers</a></li>
+                        <li><a href="pages/snorkelen.html">Snorkelaars</a></li>
+                        <li><a href="pages/mountainclimbing.html">Mountainclimbers</a></li>
+                    </ul>
+
+                    <i class="fas fa-route"></i>
                 </div>
             </div>
         </div>
     </div>
 
+
     <aside>
         <!-- Call to action button -->
-        <button type='button' class="button"><a href="#">Last Minutes</a></button>
+        <button type='button' class="button"><a href="pages/lastminutes.html">Last Minutes</a></button>
         <span>Extra voordeel met de Last Minutes</span>
     </aside>
+
 
     <div class="content">
         <!-- Call to action buttons -->
@@ -76,96 +89,21 @@
         <button type='button' class="button"><a href="#contact" class="smooth-scroll">Contact</a></button>
     </div>
 
-    <main>
-        <!-- Last-minutes sectie -->
-        <div class="last-minutes">
-            <!--            <h1>Last Minutes</h1>-->
 
-            <!--            <div class="owl-carousel cards-carousel">-->
-            <!-- Card item -->
-            <div class="card">
-                <!-- Card afbeelding -->
-                <img src='files/climbing.jpg' class="card-image" alt="">
-                <!-- Card titel -->
-                <div class="card-title climbing">
-                    Mountainclimbing
-                </div>
-                <!-- Card beschrijving -->
-                <div class="card-desc">
-                    Deze week vertrekt een groep enthousiaste klimmers nar de Himalayas.
-                </div>
-                <div class="card-price">
-                    <span>€380,00</span>
-                </div>
-                <!-- Card actie buttons -->
-                <div class="card-actions">
-                    <button type='button' class='card-action-read-more'>Lees Meer</button>
-                    <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
-                </div>
-            </div>
-
-            <!-- Card item -->
-            <div class="card">
-                <!-- Card afbeelding -->
-                <img src='files/windsurfing.jpg' class="card-image" alt="">
-                <!-- Card titel -->
-                <div class="card-title">
-                    Windsurfing
-                </div>
-                <!-- Card beschrijving -->
-                <div class="card-desc">
-                    Deze maand is het aantrekkelijkst voor Windsurfing in Cancun, Mexico.
-                </div>
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€599,00</span>
-                </div>
-                <!-- Card actie buttons -->
-                <div class="card-actions">
-                    <div class="card-actions">
-                        <button type='button' class='card-action-read-more'>Lees Meer</button>
-                        <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card item -->
-            <div class="card">
-                <!-- Card afbeelding -->
-                <img src='files/snorkelen.jpg' class="card-image" alt="">
-                <!-- Card titel -->
-                <div class="card-title">
-                    Snorkelen
-                </div>
-                <!-- Card beschrijving -->
-                <div class="card-desc">
-                    Snorkelen in Costa Rica. Naast de natuurreservaten heeft Costa Rica’s werelds tweede grootste
-                    koraalrif.
-                </div>
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€499,00</span>
-                </div>
-                <!-- Card actie buttons -->
-                <div class="card-actions">
-                    <button type='button' class='card-action-read-more'>Lees Meer</button>
-                    <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
-                </div>
-            </div>
-        </div>
-        <!--        </div>-->
-
+    <main class="home">
         <!-- Boekingen sectie -->
         <div class="bookings">
-            <!--            <h1>Boekingen</h1>-->
+            <h1>Boekingen</h1>
 
             <!-- Card item -->
             <div class="card">
+
                 <!-- Card afbeelding -->
                 <img src='files/skydiven.jpg' class="card-image" alt="">
                 <div class="card-title climbing">
                     Sky Diven
                 </div>
+
                 <!-- Card beschrijving -->
                 <div class="card-desc">
                     klimtocht naar 8000 meter hoogte onder begeleiding van experts. Na de tien dagen lange tocht geniet
@@ -173,6 +111,7 @@
                 <div class="card-price">
                     <span>€799,00</span>
                 </div>
+
                 <!-- Card actie buttons -->
                 <div class="card-actions">
                     <button type='button' class='card-action-read-more'>Lees Meer</button>
@@ -182,20 +121,25 @@
 
             <!-- Card item -->
             <div class="card">
+
                 <!-- Card afbeelding -->
                 <img src='files/hiking.jfif' class="card-image" alt="">
+
                 <!-- Card titel -->
                 <div class="card-title">
                     Hiking
                 </div>
+
                 <!-- Card beschrijving -->
                 <div class="card-desc">
                     Tien dagen inclusief alles. Geniet van het
                     populairste hotel bij surfers: Hotel Vientos.
                 </div>
+                <!-- Card prijs -->
                 <div class="card-price">
                     <span>€380,00</span>
                 </div>
+
                 <!-- Card actie buttons -->
                 <div class="card-actions">
                     <button type='button' class='card-action-read-more'><a href="pages/windsurfing.html">Lees Meer</a>
@@ -207,85 +151,230 @@
 
             <!-- Card item -->
             <div class="card">
+
                 <!-- Card afbeelding -->
                 <img src='files/wakeboarden.jpg' class="card-image" alt="">
+
                 <!-- Card titel -->
                 <div class="card-title">
                     Wakeboarden
                 </div>
+
                 <!-- Card actie buttons -->
                 <div class="card-desc">
                     Dit pakket is de beste combinatie: natuurreservaten en koraalrif. Speciale aanbieding voor
                     backpackers.
                 </div>
+
+                <!-- Card prijs -->
                 <div class="card-price">
                     <span>€499,99</span>
                 </div>
+
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <button type='button' class='card-action-read-more'>Lees Meer</button>
+                    <button type='button' class='card-action-read-more'>Lees Meer</button></a>
                     <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
                 </div>
             </div>
+
+
+            <!-- Horizontale lijn liegtuig circel -->
+            <span class="hr-line">
+            </span>
+
         </div>
+
+
+        <!-- Last-minutes sectie -->
+        <div class="last-minutes">
+            <h1>Last Minutes</h1>
+
+            <!-- Card item -->
+            <div class="card">
+
+                <!-- Card afbeelding -->
+                <img src='files/climbing.jpg' class="card-image" alt="">
+
+                <!-- Card titel -->
+                <div class="card-title climbing">
+                    Mountainclimbing
+                </div>
+
+                <!-- Card beschrijving -->
+                <div class="card-desc">
+                    Deze week vertrekt een groep enthousiaste klimmers nar de Himalayas.
+                </div>
+
+                <!-- Card prijs -->
+                <div class="card-price">
+                    <span>€380,00</span>
+                </div>
+
+                <!-- Card actie buttons -->
+                <div class="card-actions">
+                    <a href="pages/mountainclimbing.html"><button type='button' class='card-action-read-more'>Lees Meer</button></a>
+                    <a href="pages/mountainclimbing.html"><button type='button' class='card-action-read-more book-now'>Boek Nu</button></a>
+                </div>
+            </div>
+
+            <!-- Card item -->
+            <div class="card">
+
+                <!-- Card afbeelding -->
+                <img src='files/windsurfing.jpg' class="card-image" alt="">
+
+                <!-- Card titel -->
+                <div class="card-title">
+                    Windsurfing
+                </div>
+
+                <!-- Card beschrijving -->
+                <div class="card-desc">
+                    Deze maand is het aantrekkelijkst voor Windsurfing in Cancun, Mexico.
+                </div>
+
+                <!-- Card prijs -->
+                <div class="card-price">
+                    <span>€599,00</span>
+                </div>
+
+                <!-- Card actie buttons -->
+                <div class="card-actions">
+                    <div class="card-actions">
+                        <a href="pages/windsurfing.html"><button type='button' class='card-action-read-more'>Lees Meer</button></a>
+                        <a href="pages/windsurfing.html"><button type='button' class='card-action-read-more book-now'>Boek Nu</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card item -->
+            <div class="card">
+
+                <!-- Card afbeelding -->
+                <img src='files/snorkelen.jpg' class="card-image" alt="">
+
+                <!-- Card titel -->
+                <div class="card-title">
+                    Snorkelen
+                </div>
+
+                <!-- Card beschrijving -->
+                <div class="card-desc">
+                    Snorkelen in Costa Rica. Naast de natuurreservaten heeft Costa Rica’s werelds tweede grootste
+                    koraalrif.
+                </div>
+
+                <!-- Card prijs -->
+                <div class="card-price">
+                    <span>€499,00</span>
+                </div>
+
+                <!-- Card actie buttons -->
+                <div class="card-actions">
+                    <a href="pages/snorkelen.html"><button type='button' class='card-action-read-more'>Lees Meer</button></a>
+                    <a href="pages/snorkelen.html"><button type='button' class='card-action-read-more book-now'>Boek Nu</button></a>
+                </div>
+            </div>
+
+
+        </div>
+
     </main>
 
 
     <!-- Contact formulier -->
     <div class="contact" id="contact">
 
-        <div class="material-type-form">
-            <!-- Contact titel -->
-            <h1>Stel ons jouw vragen</h1>
+        <div class="sub-grid">
 
-            <p>
-                Toch nog iets meer weten over een bepaalde reis, of een algemene vraag over de reizen op deze site? Laat
-                het ons weten!
-            </p>
+            <div class="material-type-form">
 
-            <!-- Open form -->
-            <form action="" class="contact-form">
-                <!-- input + label container -->
-                <div class="field">
-                    <input type="text" id="name" name="name" class="field-input" required>
-                    <label for="name" class="field-label">Naam</label>
-                </div>
+                <!-- Contact titel -->
+                <h1>Stel ons jouw vragen</h1>
 
-                <!-- input + label container -->
-                <div class="field">
-                    <input type="text" id="e-mail" name="e-mail" class="field-input" required>
-                    <label for="e-mail" class="field-label">E-mail</label>
-                </div>
+                <p>
+                    Toch nog iets meer weten over een bepaalde reis, of een algemene vraag over de reizen op deze site?
+                    Laat
+                    het ons weten!
+                </p>
 
-                <!-- textarea + label container -->
-                <div class="field textarea">
-                    <textarea id="message" name="message" class="field-textarea" required></textarea>
-                    <label for="message" class="field-label textarea">Schrijf je bericht</label>
-                </div>
+                <!-- Open form -->
+                <form action="" class="contact-form">
 
-                <!-- Submit button -->
-                <div class="card-actions">
-                    <button type='button' class='card-action-read-more book-now'>Verzenden</button>
-                </div>
-            </form>
+                    <!-- input + label container -->
+                    <div class="field">
+                        <input type="text" id="name" name="name" class="field-input" required>
+                        <label for="name" class="field-label">Naam</label>
+                    </div>
+
+                    <!-- input + label container -->
+                    <div class="field">
+                        <input type="text" id="e-mail" name="e-mail" class="field-input" required>
+                        <label for="e-mail" class="field-label">E-mail</label>
+                    </div>
+
+                    <!-- textarea + label container -->
+                    <div class="field textarea">
+                        <textarea id="message" name="message" class="field-textarea" required></textarea>
+                        <label for="message" class="field-label textarea">Schrijf je bericht</label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="card-actions">
+                        <button type='button' class='card-action-read-more book-now'>Verzenden</button>
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
+
     </div>
 
 
     <!-- Footer met sub-grid -->
     <footer>
         <div class="sub-grid">
-
+            <div class="cell">
+                <h3>Privacy</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                </ul>
+            </div>
+            <div class="cell">
+                <h3>Disclaimer</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                </ul>
+            </div>
+            <div class="cell">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
+
 </div>
 
 
-<!-- Scroll to anchor -->
+<!-- Scroll Functions -->
 <script src="js/scroll.js"></script>
-<!-- Ripple effect -->
+<!-- Ripple Effect -->
 <script src="js/ripple.js"></script>
-<!-- Import parallax.js vendor -->
+<!-- Vendor Import Parallax.js  -->
 <script src="vendor/parallax/parallax.min.js"></script>
 </body>
 </html>

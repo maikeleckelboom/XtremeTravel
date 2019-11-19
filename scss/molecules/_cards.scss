@@ -2,15 +2,15 @@
 
 // Primray card Styles
 .card {
-  box-sizing: border-box;
   box-shadow: rem-calc(2) rem-calc(2) rem-calc(20) 0 transparentize(rgba(0, 0, 0, 0.59), 0.3);
+  box-sizing: border-box;
   border-radius: rem-calc(3);
   margin: rem-calc(22) 1.5%;
   animation: scl 0.5s ease-in-out;
   transform-origin: left center;
   background: #fff;
-
   min-width: rem-calc(200);
+
 
   // Vanaf mobiel kleinscherm en hoger
   @include set-breakpoint(mobile, up) {
@@ -27,14 +27,15 @@
     width: 30%;
   }
 
-  // Output: .card-actions
+
+  // .card-actions
   &-actions {
     display: flex;
     justify-content: flex-end;
     padding: 0 rem-calc(4);
   }
 
-  // Output
+
   // .card-title
   &-title {
     margin-top: rem-calc(-36);
@@ -44,13 +45,14 @@
     font-size: rem-calc(24);
   }
 
-  // Output: .card-image
+
+  // .card-image
   &-image {
     width: 100%;
     height: rem-calc(162);
   }
 
-  // Output
+
   // .card-desc
   &-desc {
     padding: rem-calc(8) rem-calc(8) rem-calc(8) rem-calc(8);
@@ -59,11 +61,11 @@
     overflow: hidden;
   }
 
-  // Output
+
   // .card-price
   &-price {
-    // Position relative zodat op
-    // de onderliggende span
+
+    // Position relative zodat op het onderliggende element (in dit geval span)
     // position absolute gebruikt kan worden
     position: relative;
 
@@ -81,11 +83,11 @@
     }
   }
 
-  // Output
+
   // .card-action
   &-action {
 
-    // Output
+
     // .card-action-read-more
     &-read-more {
       margin: rem-calc(8) 0 rem-calc(8) rem-calc(8);
@@ -103,14 +105,14 @@
       font-weight: 600;
       transition: box-shadow 0.3s ease-in;
 
-      // Output
+
       // .card-action-read-more.book-now
       &.book-now {
         background: #2a49a5;
         color: #fff;
       }
 
-      // Output
+
       // .card-action-read-more:hover
       &:hover {
         background: transparentize(#3156d4, 0.2);
@@ -120,7 +122,7 @@
       }
     }
 
-    // Output
+
     // .card-action:hover
     &:hover {
       box-shadow: rem-calc(7) rem-calc(7) rem-calc(15) rem-calc(2) transparentize(black, 0.5);
@@ -129,18 +131,29 @@
   }
 }
 
+
 // Sectie containers
 .last-minutes, .bookings {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  margin: rem-calc(10) 0;
+  padding: rem-calc(20) 0 rem-calc(28) 0;
 
   h1 {
     width: 100%;
-    font-size: rem-calc(18);
-    margin: rem-calc(10) 0 rem-calc(20) rem-calc(12);
+    font-size: rem-calc(22);
+
+    @include set-breakpoint(mobile, up) {
+      margin: rem-calc(10) 0 rem-calc(4) rem-calc(12);
+    }
+
+    @include set-breakpoint(laptop, up) {
+      margin: rem-calc(10) 0 rem-calc(4) rem-calc(25);
+    }
   }
 }
+
 
 .contact {
   h1 {
@@ -150,3 +163,59 @@
   }
 }
 
+
+ul.checkmark {
+  padding: rem-calc(12) rem-calc(8);
+
+  li {
+
+    // Anchor link styles
+    a {
+      transition: ease all 200ms;
+
+      // Voor de hover geactiveerd wordt de kleur van de border mee geven (anders krijg je een transition van zwart naar rood).
+      border-color: #ff3840;
+
+      &:hover {
+        border-bottom: solid rem-calc(1) #ff3840;
+        transition: ease all 200ms;
+      }
+    }
+
+    // Positie relatief voor het gebruiken van position absolute
+    // voor het pseudo element ::before
+    position: relative;
+
+
+    // Verwijder de standaard bullet-points
+    list-style-type: none;
+
+
+    // Maak ruimte rondom het element binnen de border
+    padding-left: rem-calc(14);
+
+
+    // Maak ruimte rondom het element buiten de border
+    margin: rem-calc(4) 0;
+
+
+    // Maak gebruik van het pseudo element ::before
+    // Construcueer de checkmark en geef dit weer i.p.v. de bullet
+    &::before {
+      content: "";
+      position: absolute;
+      left: rem-calc(-4);
+      top: rem-calc(2);
+      width: rem-calc(8);
+      height: rem-calc(12);
+      border: solid $main_color;
+      border-width: 0 rem-calc(2) rem-calc(2) 0;
+
+      // Browser compatability
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}

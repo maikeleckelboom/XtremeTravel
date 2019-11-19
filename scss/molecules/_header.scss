@@ -23,7 +23,7 @@
     }
 
     li a:hover,
-    .header .menu-btn:hover {
+    .menu-btn:hover {
       background: #f4f4f4;
     }
 
@@ -42,6 +42,7 @@
     color: #000;
     span {
       color: #ff3840;
+      font-weight: 600;
     }
   }
 
@@ -118,7 +119,7 @@
 }
 
 
-@media (min-width: em-calc(1400)) {
+@media (min-width: em-calc(1340)) {
   .center {
     width: 80%;
     margin: 0 auto;

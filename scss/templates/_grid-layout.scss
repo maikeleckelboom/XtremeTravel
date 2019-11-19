@@ -1,123 +1,216 @@
-// Allereerst ben begonnen met het in elkaar zetten van de grid
-// Dit bestand word niet meer gebruikt in dit project
-// 07-11-2019
-
 @import '../abstracts/base';
 
-// Grid-layout
+// Selecteer de grid container
 .grid-container {
+
+  // Initialiseer CSS Grid
   display: grid;
+
+
+  // Herhaal 6 kolommen, verdeel het over 6 fracties. Minimaal 0 en maximaal 1 fractie
   grid-template-columns: repeat(6, 1fr);
+
+
+  // Maak het toevoegen van nieuwe rijen dynamisch. Regel dit automatisch
   grid-template-rows: auto;
 
+
   header {
-    background: rgb(148, 204, 108);
+
+    // Zet de header op rij 1 tot rij 2.
     grid-row: 1/2;
+
+
+    // Zet de kolommen vanaf rij 1 tot 7
     grid-column: 1/7;
+
+    // Maak van dit grid item ook een grid container voor het alignen van de children.
     display: grid;
+
+
+    // Herhaal opnieuw 6 kolommen, verdeel dit over 6 fracties
     grid-template-columns: repeat(6, 1fr);
+
+
+    // Sub-grid voor het aligen van items tegen de grid-lijnen aan van de parent.
     .sub-grid {
       grid-column: 2/6;
     }
   }
 
+  // Parallax container, verdeel de rijen en kolommen
   .parallax {
-    background: #06aeda;
+
+    // Start rij 2 en eindig op rij 3
     grid-row: 2/3;
+
+
+    // Start rij 1 en eindig op rij 7
     grid-column: 1/7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    .sub-grid {
-      grid-column: 2/6;
+
+
+    .parallax-window {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+
+
+      .sub-grid {
+        display: grid;
+        grid-column: 2/6;
+      }
     }
   }
+
 
   aside {
-    background: lightsalmon;
     grid-row: 3/4;
     grid-column: 2/4;
   }
 
+
   main {
-    background: lightblue;
     grid-row: 4/5;
     grid-column: 2/6;
   }
 
+
   .content {
     grid-row: 3/4;
     grid-column: 4/6;
-    background: #ff3840;
   }
 
+
   .contact {
+    // Grid
     grid-row: 5/6;
-    grid-column: 2/6;
-    background: royalblue;
+    grid-column: 1/7;
+
+    // Centreer dit grid item horizontaal in het midden
+    justify-self: center;
+
+
+    // Maak een grid-conainer van dit grid-item
+    display: grid;
+
+    .sub-grid {
+      grid-column: 2;
+    }
   }
 
   footer {
-    background: #ffbf61;
+    // Grid waardes
     grid-row: 6/7;
     grid-column: 1/7;
+
+
+    // Maak van dit grid item tegerlijke tijd een grid-container
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+
+
+    // Sub grid
     .sub-grid {
       grid-column: 2/6;
     }
   }
 }
 
-@media (max-width: em-calc(768)) {
+
+// Desktop set-breakpoint(dekstop, down)
+@media (max-width: em-calc(1340)) {
   .grid-container {
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
-  }
+
+    // Verminder de ruimte links en rechts van de grid-container (subgrid)
+    grid-template-columns: 0.4fr repeat(4, 1fr) 0.4fr;
 
 
-  .grid-container aside {
-    grid-row: 3/4;
-    grid-column: 2/6;
-  }
-
-  .grid-container .content {
-    grid-row: 4/5;
-    grid-column: 2/6;
-  }
-
-  .grid-container main {
-    grid-row: 5/6;
-  }
-
-  .grid-container .contact {
-    grid-row: 6/7;
-  }
-
-  .grid-container footer {
-    grid-row: 7/8;
-  }
-
-  .grid-container header,
-  .grid-container footer,
-  .grid-container .parallax{
-    grid-template-columns: repeat(10, 1fr);
-
-  }
-
-  .grid-container header .sub-grid,
-  .grid-container footer .sub-grid,
-  .grid-container .parallax .sub-grid {
-    grid-column: 2/6;
+    header {
+      grid-template-columns: 0.4fr repeat(4, 1fr) 0.4fr;
+    }
   }
 }
 
+
+// Tablet set-breakpoint(tablet, down)
+@media (max-width: em-calc(768)) {
+
+  // Verminder de witruimte links en rechts van de grid-container
+  .grid-container {
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
+
+
+    // Sub grid columns
+    header .sub-grid,
+    footer .sub-grid,
+    .parallax-window .sub-grid {
+      grid-column: 1/7;
+    }
+
+
+    footer {
+      grid-row: 7/8;
+    }
+
+
+    aside {
+      grid-row: 3/4;
+      grid-column: 1/7;
+    }
+
+
+    main {
+      grid-row: 5/6;
+      grid-column: 1/7;
+    }
+
+
+    // Aangegeven dat de grid moet bestaan uit 6x 1 fractie
+    // Dit gedaan om het alignen van de items goed te laten gaan
+    // Wachten op CSS grid module 2 voor de subgrid property
+    // Op dit moment alleen ondersteund in firefox nightly
+    // https://dev.to/ruphaa/css-subgrid-level-2-of-css-grid-1na0
+    .parallax-window {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+
+    .content {
+      grid-row: 4/5;
+      grid-column: 1/7;
+    }
+
+
+    .contact {
+      grid-row: 6/7;
+      grid-column: 1/7;
+
+
+      // Align grid item horizontaal in het midden
+      justify-self: center;
+    }
+  }
+}
+
+
+
+// Tablet set-breakpoint(smartphone, down)
 @media (max-width: em-calc(468)) {
   .grid-container {
-    grid-template-columns: 0 1fr 1fr 1fr 1fr 0;
-  }
 
-  .grid-container header .sub-grid,
-  .grid-container footer .sub-grid,
-  .grid-container .parallax .sub-grid {
-    grid-column: 1/6;
+
+    // Verwijder de witruimte links en rechts van de grid-container
+    grid-template-columns: 0 1fr 1fr 1fr 1fr 0;
+
+
+    // Trek de grid uit naar 100% breedte
+    header .sub-grid,
+    footer .sub-grid {
+      grid-column: 1/11;
+    }
+
+
+    .parallax .parallax-window .sub-grid {
+      grid-column: 1/7;
+    }
   }
 }

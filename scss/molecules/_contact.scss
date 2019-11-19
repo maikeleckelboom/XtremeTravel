@@ -13,19 +13,18 @@ input, select, textarea {
   padding: rem-calc(34);
   background: white;
   box-shadow: rem-calc(2) rem-calc(2) rem-calc(20) 0 transparentize(rgba(81, 81, 81, 0.54), 0.3);
+  margin: rem-calc(34) rem-calc(8) rem-calc(34) rem-calc(8);
+  max-width: rem-calc(700);
 }
 
 // Contact container
 .contact {
-  max-width: rem-calc(700);
-  margin: rem-calc(20);
+  margin:  rem-calc(20) 0  0 rem-calc(0);
+  background: #f7f7f7;
+  width: 100%;
 
   p {
     width: 76%;
-  }
-
-  @include set-breakpoint(mobile, up) {
-    width: 95%;
   }
 
   // formulier
@@ -94,7 +93,7 @@ input, select, textarea {
     }
 
     // Blauwe lijn animatie
-    // Van links naar rechts met pseudo elementen before & after
+    // Van binnen naar buiten met pseudo elementen before & after
     .field-label::after,
     .field::before {
       content: '';

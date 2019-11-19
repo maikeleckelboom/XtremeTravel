@@ -15,17 +15,22 @@
   text-transform: uppercase;
   font-weight: 600;
   transition: box-shadow 0.3s ease-in;
+
   &:hover {
     background: transparentize(#3156d4, 0.2);
     transition: all 0.15s ease-in;
     cursor: pointer;
     color: white;
   }
+
   a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    display: block;
+    line-height: rem-calc(38);
   }
 }
+
 
 
 // Ripple effect
@@ -46,6 +51,7 @@
     opacity: 0;
   }
 }
+
 
 // Keyframes Scale
 @keyframes scl {

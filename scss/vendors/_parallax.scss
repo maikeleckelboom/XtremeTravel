@@ -1,7 +1,7 @@
 @import '../abstracts/base';
 
 .parallax-window {
-  min-height: 400px;
+  min-height: rem-calc(400);
   background: transparent;
   position: relative;
 }

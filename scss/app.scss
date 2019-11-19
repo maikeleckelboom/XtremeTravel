@@ -1,6 +1,5 @@
 // Google fonts import
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 // Import SCSS partials | Atomic Design
 // http://atomicdesign.bradfrost.com/chapter-2/
 @import 'abstracts/base';
@@ -25,7 +24,8 @@
 body {
   background: white;
   font-family: 'Roboto', sans-serif;
-  // Overflow-x hidden voor het verbergen van mogelijk uitstekende content op de X-axis
+
+  // Voor het verbergen van mogelijk uitstekende content op de X-axis
   overflow-x: hidden;
 }
 
@@ -34,236 +34,129 @@ a {
   color: inherit;
 }
 
-// Grid-layout
-.grid-container {
-  display: grid;
-  // Herhaal 6 kolommen, verdeel het over 6 fracties
-  grid-template-columns: repeat(6, 1fr);
-  // Hou de rijen dynamisch regel dit automatisch
-  grid-template-rows: auto;
+main {
 
-  header {
-    // Zet de header op rij 1 tot rij 2.
-    grid-row: 1/2;
-    // Zet de kolommen vanaf rij 1 tot 7
-    grid-column: 1/7;
-    // Maak het een grid-item voor het alignen van de children.
-    display: grid;
-    // Herhaal opnieuw 6 kolommen, verdeel het over 6 fracties
-    grid-template-columns: repeat(6, 1fr);
-    // Sub-grid voor het aligen van items tegen de grid-lijnen aan van de parent.
-    .sub-grid {
-      grid-column: 2/6;
-    }
-  }
-
-  // Parallax container, verdeel de rijen en kolommen
-  .parallax {
-    grid-row: 2/3;
-    grid-column: 1/7;
-
-    .parallax-window {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-    }
-
-    .sub-grid {
-      display: grid;
-      grid-column: 2/6;
-    }
-
-    // Styles
-    .callout {
-      max-width: 70%;
-
-      p {
-        background: white;
-        border-radius: rem-calc(3);
-        max-height: rem-calc(400);
-        box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0, 0, 0, .1);
-        padding: rem-calc(12);
-        margin: rem-calc(18);
-      }
-    }
-  }
-
-  aside {
-    grid-row: 3/4;
-    grid-column: 2/4;
-    background: none;
-
-    span {
-      margin: rem-calc(8);
-      padding: rem-calc(8);
-      display: inline-block;
-    }
-
-    // Media Queries via een mixin
-    // (abstracts/mixins.scss) + (abstracts/settings.scss)
-    // Als het scherm tablet formaat is of kleiner voer deze code uit
-    @include set-breakpoint(tablet, down) {
-      background: #f8f8f8;
-    }
-  }
-
-  main {
-    grid-row: 4/5;
-    grid-column: 2/6;
-    // Maak van de main een flex item om items te centreren
-    // Zorg er ook voor dat de items zich responsive gedragen op alle devices
-    //display: flex;
-    //justify-content: center;
-    //flex-flow: row wrap;
-    //overflow-x: hidden;
-  }
-
-  .content {
-    grid-row: 3/4;
-    grid-column: 4/6;
-
-    // Styles
-    padding: 0 rem-calc(10);
-    display: flex;
-    justify-content: flex-end;
-    background: none;
-
-    // Media Queries
-    @include set-breakpoint(tablet, down) {
-      background: #f8f8f8;
-    }
-  }
-
-  .contact {
-    // Grid
-    grid-row: 5/6;
-    grid-column: 2/6;
-
-    // Styles
-    // Align dit grid item horizontaal in het midden
-    justify-self: center;
-  }
-
-  footer {
-    // Grid
-    grid-row: 6/7;
-    grid-column: 1/7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-
-    // Sub grid
-    .sub-grid {
-      grid-column: 2/6;
-
-      // Styles
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    // Styles
-    min-height: rem-calc(60);
-    box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0, 0, 0, .1);
-    width: 100%;
-    height: rem-calc(60);
-    background: #fff;
-    margin-top: rem-calc(40);
+  // Geef padding het main element op elke pagina behalve als het de class .home bevat
+  &:not(.home) {
+    padding: rem-calc(80) rem-calc(40);
   }
 }
+
+
+// Callout Styles
+.callout {
+  max-width: rem-calc(410);
+  position: relative;
+  display: block;
+  background: white;
+  border-radius: rem-calc(3);
+  min-height: rem-calc(192);
+  max-height: rem-calc(180);
+  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0, 0, 0, .1);
+  padding: rem-calc(24) rem-calc(44) rem-calc(24) rem-calc(24);
+  margin: rem-calc(42) rem-calc(18) rem-calc(18) rem-calc(18);
+
+  // Media Queries via een mixin
+  // (abstracts/mixins.scss) + (abstracts/settings.scss)
+  // Als het scherm tablet formaat is of kleiner voer deze code uit
+  @include set-breakpoint(tablet, down) {
+    max-height: initial;
+  }
+
+  // Als het scherm smartphone formaat is of kleiner voer deze code uit
+  @include set-breakpoint(smartphone, down) {
+    max-width: initial;
+  }
+
+  // Route icon
+  .fa-route {
+    position: absolute;
+    right: rem-calc(40);
+    bottom: rem-calc(40);
+    font-size: rem-calc(98);
+    opacity: 0.1;
+  }
+}
+
+
+
+
+aside {
+
+
+  span {
+    margin: rem-calc(8);
+    padding: rem-calc(8);
+    display: inline-block;
+  }
+
+
+  // Media Queries
+  @include set-breakpoint(mobile, up) {
+    background: #f8f8f8;
+  }
+
+
+  @include set-breakpoint(tablet, up) {
+    border-radius: 0 0 0 rem-calc(20);
+  }
+}
+
+
+
+.content {
+  padding: 0 rem-calc(10);
+  display: flex;
+  justify-content: flex-end;
+
+
+  // Media Queries
+  @include set-breakpoint(mobile, up) {
+    background: #f8f8f8;
+    border-radius: 0 0 rem-calc(10) rem-calc(10);
+  }
+
+
+  @include set-breakpoint(tablet, up) {
+    border-radius: 0 0 rem-calc(20) rem-calc(0);
+  }
+
+}
+
+
 
 // Verberg item op schermen die groter zijn dan het formaat van een laptop
 .on-mobile {
   display: none;
+
   @include set-breakpoint(laptop, down) {
     display: block;
   }
 }
 
-// Grid Media Queries
 
-// Tablet set-breakpoint(dekstop, down)
-@media (max-width: em-calc(1023)) {
-  .grid-container {
-    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
 
-    header {
-      grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
-    }
+// Horizontale lijn met circel in het midden + icoon
+.hr-line {
+  height: rem-calc(2);
+  background: #0000001a;
+  width: 100%;
+  position: relative;
+  top: rem-calc(36);
+
+
+  &::after {
+    content: '';
+    background: url("../files/plane.svg") no-repeat 70% 50%;
+    height: rem-calc(54);
+    width: rem-calc(54);
+    position: absolute;
+    background-size: rem-calc(42);
+    border: solid rem-calc(2) #0000001a;
+    border-radius: 50%;
+    padding: rem-calc(8);
+    transform: translate(-50%) rotate(-40deg);
+    left: 50%;
+    top: rem-calc(-26);
   }
 }
-
-// Tablet set-breakpoint(tablet, dekstop / widescreen)
-@media (max-width: em-calc(1340)) {
-  .grid-container {
-    grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 0.4fr;
-
-    header {
-      grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 0.4fr;
-    }
-  }
-}
-
-// Tablet set-breakpoint(tablet, down)
-@media (max-width: em-calc(768)) {
-  // Verminder de witruimte links en rechts van de grid-container
-  .grid-container {
-    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
-
-    header .sub-grid,
-    footer .sub-grid,
-    .parallax-window .sub-grid {
-      grid-column: 1/7;
-    }
-
-    footer {
-      grid-row: 7/8;
-    }
-
-    aside {
-      grid-row: 3/4;
-      grid-column: 1/7;
-    }
-
-    main {
-      grid-row: 5/6;
-      grid-column: 1/7;
-    }
-
-    // Aangegeven dat de grid moet bestaan uit 10x 1 fractie
-    // Dit gedaan om het alignen van de items goed te laten gaan
-    // Wachten op CSS grid module 2 voor de subgrid property
-    // Op dit moment alleen ondersteund in firefox nightly
-    // https://dev.to/ruphaa/css-subgrid-level-2-of-css-grid-1na0
-    .parallax-window {
-      grid-template-columns: repeat(10, 1fr);
-    }
-
-    .content {
-      grid-row: 4/5;
-      grid-column: 1/7;
-    }
-
-    .contact {
-      grid-row: 6/7;
-      grid-column: 1/7;
-      // Align dit grid item horizontaal in het midden
-      justify-self: center;
-    }
-  }
-}
-
-// Tablet set-breakpoint(smartphone, down)
-@media (max-width: em-calc(468)) {
-  .grid-container {
-    // Verwijder de witruimte links en rechts van de grid-container
-    grid-template-columns: 0 1fr 1fr 1fr 1fr 0;
-
-    // Trek de grid uit naar 100% breedte
-    header .sub-grid,
-    footer .sub-grid,
-    .parallax .sub-grid {
-      grid-column: 1/11;
-    }
-  }
-}
-
-
