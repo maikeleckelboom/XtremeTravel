@@ -1,0 +1,117 @@
+@import "../abstracts/base";
+
+$num-of-tabs: 3;
+
+@mixin tabs {
+  @for $i from 1 through $num-of-tabs {
+    &:nth-of-type(#{$i}) {
+      &:checked {
+        ~ .slide {
+          left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+        }
+      }
+    }
+  }
+}
+
+.tabs-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+input[type="radio"][name="tabs"] {
+  position: absolute;
+  z-index: -1;
+  visibility: hidden;
+
+  + .tab-label-content label {
+    margin: 0;
+    background: none;
+    font-size: rem-calc(14);
+    border-radius: 0;
+  }
+
+  &:checked {
+    + .tab-label-content {
+      label {
+        color: $black;
+      }
+
+      .tab-content {
+        display: block;
+      }
+
+    }
+  }
+
+  @include tabs;
+
+  &:first-of-type {
+    &:checked {
+      ~ .slide {
+        left: 0;
+      }
+
+    }
+  }
+}
+
+
+.slide {
+  background: $purpleblue;
+  width: calc(100% / #{$num-of-tabs});
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 4px);
+  transition: left 0.3s ease-out;
+}
+
+.tab-label-content {
+  width: 100%;
+
+  label:not(.exception) {
+    cursor: pointer;
+    color: $black;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 76px;
+    transition: color 0.2s ease;
+    width: 100%;
+
+    .rating & {
+      height: auto;
+    }
+  }
+
+  .tab-content {
+    position: absolute;
+    top: rem-calc(94);
+    left: 0;
+    line-height: 130%;
+    display: none;
+
+    h3 {
+      margin: rem-calc(8) 0;
+    }
+  }
+}
+
+//@media screen and (max-width: 800px) {
+//  h1 {
+//    padding: 40px 0 90px 10%;
+//  }
+//  .tab-wrap {
+//    width: 80%;
+//    margin-left: 10%;
+//    top: -106px;
+//  }
+//}

@@ -1,36 +1,48 @@
+@import "../abstracts/base";
+
 footer {
-  min-height: rem-calc(60);
-  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0, 0, 0, .1);
+  min-height: rem-calc(60); 
   width: 100%;
-  background: #fff;
   padding: rem-calc(20) 0 rem-calc(60) 0;
-
-  h3 {
-    font-size: rem-calc(18);
-  }
-
-  ul {
-    list-style-type: none;
-
-    li {
-      margin-left: rem-calc(22);
-
-      &::before {
-        content: '';
-        background: url("../files/icons/navigation.svg");
-        height: rem-calc(12);
-        width: rem-calc(12);
-        background-size: contain;
-        position: absolute;
-        margin-left: rem-calc(-20);
-        margin-top: rem-calc(4);
-      }
-    }
-  }
+  box-shadow: rem-calc(5) rem-calc(3) rem-calc(3) rem-calc(1) $black;
 
   .sub-grid {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+  }
+
+  .cell {
+
+    p {
+      margin-bottom: rem-calc(8);
+      font-size: rem-calc(18);
+    }
+
+    h3 {
+      position: relative;
+      font-size: rem-calc(18);
+      left: rem-calc(18);
+    }
+
+    ul {
+      list-style-type: none;
+      margin-left: 20px;
+      margin-top: 8px;
+
+      li {
+        //
+        //&::before {
+        //  content: '';
+        //  background: url("../files/icons/navigation.svg");
+        //  height: rem-calc(12);
+        //  width: rem-calc(12);
+        //  background-size: contain;
+        //  position: absolute;
+        //  margin-left: rem-calc(-20);
+        //  margin-top: rem-calc(4);
+        //}
+      }
+
+    }
   }
 }

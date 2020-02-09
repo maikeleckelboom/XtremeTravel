@@ -1,7 +1,100 @@
 @import '../abstracts/base';
 
 .parallax-window {
-  min-height: rem-calc(400);
+  min-height: rem-calc(480);
   background: transparent;
+}
+
+.parallax {
   position: relative;
+
+  .paralax-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: rem-calc(480);
+    z-index: 2;
+    //background: rgba(211, 51, 56, 0.28);
+    background: rgba(0, 0, 0, 0.18);
+    opacity: 0.5;
+    transition: ease-in-out 400ms;
+
+    &:hover {
+      //opacity: 0.1;
+      transition: ease-in-out 400ms;
+    }
+  }
+}
+
+
+// Tab windows
+.tab-windows {
+
+  #mountain-window {
+  }
+
+  #windsurfen-window {
+  }
+
+  #snorkelen-window {
+  }
+
+}
+
+
+.tab-navigation {
+  display: flex;
+  flex-flow: row wrap;
+
+  a {
+    margin: rem-calc(4);
+  }
+}
+
+
+// Callout Styles
+.callout {
+  max-width: rem-calc(410);
+  position: relative;
+  display: block;
+  background: white;
+  border-radius: rem-calc(3);
+  min-height: rem-calc(126);
+  max-height: rem-calc(126);
+  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0, 0, 0, .1);
+  padding: rem-calc(24) rem-calc(44) rem-calc(24) rem-calc(24);
+  margin: rem-calc(42) rem-calc(18) rem-calc(18) rem-calc(18);
+  z-index: 4;
+  opacity: 0;
+
+  // Uitzonder voor de class .callout.home
+  &:not(.home) {
+    min-height: rem-calc(80);
+    max-height: rem-calc(126);
+  }
+
+
+  // Media Queries via een mixin (abstracts/mixins.scss | settings.scss)
+  // Als het scherm tablet formaat is of kleiner voer deze code uit
+  @include set-breakpoint(tablet, down) {
+    //max-height: initial;
+  }
+
+  // Als het scherm smartphone formaat is of kleiner voer deze code uit
+  @include set-breakpoint(smartphone, down) {
+    max-width: initial;
+  }
+
+  // Fontawesome 5
+  .fa-route, .fa-water, .fas {
+    position: absolute;
+    right: rem-calc(40);
+    bottom: rem-calc(40);
+    font-size: rem-calc(78);
+    top: rem-calc(60);
+    opacity: 0.1;
+  }
+
 }

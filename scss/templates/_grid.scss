@@ -49,18 +49,24 @@
     grid-column: 1/7;
 
 
-    .parallax-window {
+    .sub-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(10, 1fr);
 
+      //position: relative;
 
-      .sub-grid {
-        display: grid;
-        grid-column: 2/6;
+      .parallax-title {
+        //position: absolute;
+        grid-column: 2/7;
       }
     }
+
   }
 
+  //.container {
+  //  grid-column: 2/6;
+  //  grid-row: 3/4;
+  //}
 
   aside {
     grid-row: 3/4;
@@ -142,7 +148,7 @@
     // Sub grid columns
     header .sub-grid,
     footer .sub-grid,
-    .parallax-window .sub-grid {
+    .parallax .sub-grid {
       grid-column: 1/7;
     }
 
@@ -169,7 +175,7 @@
     // Wachten op CSS grid module 2 voor de subgrid property
     // Op dit moment alleen ondersteund in firefox nightly
     // https://dev.to/ruphaa/css-subgrid-level-2-of-css-grid-1na0
-    .parallax-window {
+    .parallax {
       grid-template-columns: repeat(6, 1fr);
     }
 
@@ -192,14 +198,13 @@
 }
 
 
-
 // Tablet set-breakpoint(smartphone, down)
 @media (max-width: em-calc(468)) {
   .grid-container {
 
 
     // Verwijder de witruimte links en rechts van de grid-container
-    grid-template-columns: 0 1fr 1fr 1fr 1fr 0;
+    grid-template-columns: 0 repeat(4, 1fr) 0;
 
 
     // Trek de grid uit naar 100% breedte
@@ -209,7 +214,7 @@
     }
 
 
-    .parallax .parallax-window .sub-grid {
+    .parallax .sub-grid {
       grid-column: 1/7;
     }
   }

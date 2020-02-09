@@ -1,5 +1,9 @@
 // Google fonts import
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&display=swap');
+// Weloveicons font import
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 // Import SCSS partials | Atomic Design
 // http://atomicdesign.bradfrost.com/chapter-2/
 @import 'abstracts/base';
@@ -7,6 +11,7 @@
 @import 'molecules/base';
 @import 'templates/base';
 @import 'vendors/base';
+
 
 // Default browser settings reset
 * {
@@ -20,109 +25,134 @@
   }
 }
 
-// Body
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+.header-logo {
+  position: absolute;
+}
+
+
 body {
   background: white;
   font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
 
   // Voor het verbergen van mogelijk uitstekende content op de X-axis
   overflow-x: hidden;
+
+  // Vanaf mobiel kleinscherm en hoger
+  @include set-breakpoint(mobile, up) {
+    font-size: 88.5%;
+  }
+
+  // Vanaf smartphone en hoger
+  @include set-breakpoint(smartphone, up) {
+    font-size: 90%;
+  }
+
+  // Tussen smartphone en phablet, en hoger
+  @include set-breakpoint(phablet, up) {
+    font-size: 92.5%;
+  }
+
+  // Vanaf tablet en hoger
+  @include set-breakpoint(tablet, up) {
+    font-size: 95%;
+  }
+
+  // Vanaf laptop en hoger
+  @include set-breakpoint(laptop, up) {
+    font-size: 97.5%;
+  }
+
+  // Vanaf dekstop monitor en hoger
+  @include set-breakpoint(dekstop, up) {
+    font-size: 100%;
+  }
+
+
 }
 
+.grid-container .container {
+  .sub-grid {
+    display: flex;
+    padding: rem-calc(74) rem-calc(18) rem-calc(22) rem-calc(22);
+
+    p {
+      font-size: rem-calc(17);
+      //padding-right: rem-calc(80);
+    }
+  }
+}
+
+
+// Overschrijf browser defaults voor links
 a {
   text-decoration: none;
   color: inherit;
 }
 
+
 main {
 
-  // Geef padding het main element op elke pagina behalve als het de class .home bevat
+  // Geef padding mee op elke pagina behalve als het de class .home bevat
   &:not(.home) {
     padding: rem-calc(80) rem-calc(40);
   }
 }
 
-
-// Callout Styles
-.callout {
-  max-width: rem-calc(410);
-  position: relative;
-  display: block;
-  background: white;
-  border-radius: rem-calc(3);
-  min-height: rem-calc(192);
-  max-height: rem-calc(180);
-  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0, 0, 0, .1);
-  padding: rem-calc(24) rem-calc(44) rem-calc(24) rem-calc(24);
-  margin: rem-calc(42) rem-calc(18) rem-calc(18) rem-calc(18);
-
-  // Media Queries via een mixin
-  // (abstracts/mixins.scss) + (abstracts/settings.scss)
-  // Als het scherm tablet formaat is of kleiner voer deze code uit
-  @include set-breakpoint(tablet, down) {
-    max-height: initial;
-  }
-
-  // Als het scherm smartphone formaat is of kleiner voer deze code uit
-  @include set-breakpoint(smartphone, down) {
-    max-width: initial;
-  }
-
-  // Route icon
-  .fa-route {
-    position: absolute;
-    right: rem-calc(40);
-    bottom: rem-calc(40);
-    font-size: rem-calc(98);
-    opacity: 0.1;
-  }
+aside, .content {
+  margin-top: rem-calc(14);
+  padding: rem-calc(62) rem-calc(20) rem-calc(62) rem-calc(20);
+  min-height: rem-calc(170);
 }
-
-
 
 
 aside {
 
-
-  span {
-    margin: rem-calc(8);
-    padding: rem-calc(8);
-    display: inline-block;
+  .quote {
+    font-size: rem-calc(22);
   }
 
+  .callout-container {
+    span {
+      &:nth-child(1) {
+      }
+
+      &:nth-child(2) {
+      }
+
+      &:nth-child(3) {
+
+      }
+    }
+  }
 
   // Media Queries
   @include set-breakpoint(mobile, up) {
-    background: #f8f8f8;
   }
-
 
   @include set-breakpoint(tablet, up) {
-    border-radius: 0 0 0 rem-calc(20);
   }
 }
-
 
 
 .content {
-  padding: 0 rem-calc(10);
-  display: flex;
-  justify-content: flex-end;
-
+  padding-top: 0;
+  //padding: 0;
+  margin-bottom: rem-calc(240);
 
   // Media Queries
   @include set-breakpoint(mobile, up) {
-    background: #f8f8f8;
-    border-radius: 0 0 rem-calc(10) rem-calc(10);
   }
 
 
   @include set-breakpoint(tablet, up) {
-    border-radius: 0 0 rem-calc(20) rem-calc(0);
   }
 
 }
-
 
 
 // Verberg item op schermen die groter zijn dan het formaat van een laptop
@@ -135,28 +165,69 @@ aside {
 }
 
 
-
 // Horizontale lijn met circel in het midden + icoon
 .hr-line {
   height: rem-calc(2);
   background: #0000001a;
   width: 100%;
   position: relative;
-  top: rem-calc(36);
+  top: rem-calc(52);
+
+  // Voor het weergeven van meerdere hr-lijnen
+  display: flex;
+
+  // Element niet klikbaar, kan niet worden gedetecteerd door de cursor
+  pointer-events: none;
+
+  // Op de hover van de class hr-line
+  &:hover {
+
+    // voeg deze waardes toe aan het after-element
+    &::after {
+      //border: solid rem-calc(4) #0000001a;
+      //transition: all  200ms;
+    }
+  }
 
 
   &::after {
+    // Content is verplicht voor het weergeven van de pseudo elementen
     content: '';
-    background: url("../files/plane.svg") no-repeat 70% 50%;
-    height: rem-calc(54);
-    width: rem-calc(54);
+    // Achtergrond afbeelding
+    background: url("../files/icons/plane_2.png") no-repeat 60% 60%;
+    // Achtergrond kleur achter de afbeelding
+    background-color: white;
+    // Achtergrond grootte
+    background-size: rem-calc(52);
+    // Positie absolute voor het weergeven van de achtergrond
     position: absolute;
-    background-size: rem-calc(42);
-    border: solid rem-calc(2) #0000001a;
+    // Hoogte en wijdte in rem-units
+    height: rem-calc(68);
+    width: rem-calc(68);
+    // Border van omgerekend 2 pixels breed.
+    //border: solid rem-calc(2) #0000001a;
+    // Maak een circel
     border-radius: 50%;
+    // Ruimte tussen de afbeelding en de borders
     padding: rem-calc(8);
-    transform: translate(-50%) rotate(-40deg);
+    // Verplaats het element 50% naar links vanaf de linkerkant
     left: 50%;
-    top: rem-calc(-26);
+    // Corrigeert de ruimte links en rechts
+    // Zonder deze property start het element 50% van de linkerkant van het scherm
+    // Met deze property word het element gecentreerd in het midden van het midden
+    transform: translate(-50%);
+    // Het after element is wel detecteerbaar
+    pointer-events: all;
+    top: rem-calc(-32);
+    //transition: all 200ms;
   }
 }
+
+.image-container {
+  height: 180px;
+  overflow: hidden;
+}
+
+
+
+

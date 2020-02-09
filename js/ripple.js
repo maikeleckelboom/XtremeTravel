@@ -1,5 +1,5 @@
 // Script voor het ripple effect op de buttons
-let buttons = document.getElementsByTagName('button');
+let buttons = document.getElementsByClassName('button');
 
 Array.prototype.forEach.call(buttons, function (b) {
     b.addEventListener('click', createRipple);
@@ -21,4 +21,8 @@ function createRipple(e) {
     setTimeout(function () {
         circle.remove();
     }, 500);
+}
+
+function goBack() {
+    window.history.back();
 }

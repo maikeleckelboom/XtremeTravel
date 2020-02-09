@@ -34,13 +34,11 @@
 
             <!-- Menu navigatie lijst -->
             <ul class="menu">
-                <li class="on-mobile"><a href="../index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="../pages/windsurfing.html">Windsurfing</a></li>
                 <li><a href="../pages/mountainclimbing.html">Mountainclimbing</a></li>
                 <li><a href="../pages/snorkelen.html">Snorkelen</a></li>
-                <li><a href="../pages/lastminutes.html">Last minutes</a></li>
-                <li class="on-mobile"><a href="#">Over ons</a></li>
-                <li class="on-mobile"><a href="#">Contact</a></li>
+                <li class="on-mobile"><a href="../pages/about.html">Over ons</a></li>
             </ul>
 
         </div>
@@ -49,7 +47,7 @@
 
     <!-- Parallax.js voor een parallax effect op de banner -->
     <div class="parallax">
-        <div class="parallax-window" data-parallax="scroll" data-image-src="../files/windsurfing.jpg">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="../files/surfen.jpg">
 
             <!-- Subgrid -->
             <div class="sub-grid">
@@ -57,19 +55,12 @@
                 <!-- Overliggend tekstblok (welkom tekst)-->
                 <div class="callout">
 
-                    <p>
-                        Welkom bij <span>X</span>treemTravel, de online booking website voor de extreemste vakanties.
-                        <a href="#">Boek je vakantie nu</a> voor de voordeligste bestemmingen.
-                        Ons specialisme: de actiefste vakanties op alle continenten
-                    </p>
+                    <h4>
+                        Deze maand is het aantrekkelijkst voor Windsurfing in Cancun, Mexico
+                    </h4>
 
-                    <ul class="checkmark">
-                        <li><a href="../pages/windsurfing.html">Windsurfers</a></li>
-                        <li><a href="../pages/snorkelen.html">Snorkelaars</a></li>
-                        <li><a href="../pages/mountainclimbing.html">Mountainclimbers</a></li>
-                    </ul>
 
-                    <i class="fas fa-route"></i>
+                    <i class="fas fa-water"></i>
                 </div>
             </div>
         </div>
@@ -78,23 +69,28 @@
 
     <aside>
         <!-- Call to action button -->
-        <button type='button' class="button"><a href="../pages/lastminutes.html">Last Minutes</a></button>
-        <span>Extra voordeel met de Last Minutes</span>
+        <button type='button' class="button go-back" onclick="goBack()">Ga Terug</button>
     </aside>
 
 
     <div class="content">
         <!-- Call to action buttons -->
-        <button type='button' class="button"><a href="#">Over ons</a></button>
-        <button type='button' class="button"><a href="#contact" class="smooth-scroll">Contact</a></button>
+        <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
+
     </div>
 
 
     <main>
-        Deze maand is het aantrekkelijkst voor Windsurfing in Cancun, Mexico. Xtreemtravel heeft een fantastisch vakantiepakket voor u in de aanbieding. Tien dagen inclusief alles. Geniet van het populairste hotel bij surfers: Hotel Vientos.
+        Xtreemtravel heeft een fantastisch
+        vakantiepakket voor u in de aanbieding. Tien dagen inclusief alles. Geniet van het populairste hotel bij
+        surfers: Hotel Vientos.
         Totale prijs is €599,00 pp
-        We vliegen met KLM. Vertrek is 15 mei om 8:00 uur vanaf Schiphol. De terugreis is 25 mei om 13:00. Aankomst 26 mei om 6:00 uur lokale tijd.
+        We vliegen met KLM. Vertrek is 15 mei om 8:00 uur vanaf Schiphol. De terugreis is 25 mei om 13:00. Aankomst 26
+        mei om 6:00 uur lokale tijd.
 
+<!--        <div class="card-price tag">-->
+<!--            <span>€799,00</span>-->
+<!--        </div>-->
     </main>
 
 
@@ -153,7 +149,7 @@
     <footer>
         <div class="sub-grid">
             <div class="cell">
-                <h3>Privacy</h3>
+                <p>Privacy</p>
                 <ul>
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Item 2</a></li>
@@ -162,7 +158,7 @@
                 </ul>
             </div>
             <div class="cell">
-                <h3>Disclaimer</h3>
+                <p>Disclaimer</p>
                 <ul>
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Item 2</a></li>
@@ -171,7 +167,7 @@
                 </ul>
             </div>
             <div class="cell">
-                <h3>Links</h3>
+                <p>Links</p>
                 <ul>
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Item 2</a></li>

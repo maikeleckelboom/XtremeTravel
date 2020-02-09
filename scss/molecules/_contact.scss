@@ -12,7 +12,6 @@ input, select, textarea {
 .material-type-form {
   padding: rem-calc(34);
   background: white;
-  box-shadow: rem-calc(2) rem-calc(2) rem-calc(20) 0 transparentize(rgba(81, 81, 81, 0.54), 0.3);
   margin: rem-calc(34) rem-calc(8) rem-calc(34) rem-calc(8);
   max-width: rem-calc(700);
 }
@@ -22,17 +21,20 @@ input, select, textarea {
   margin:  rem-calc(20) 0  0 rem-calc(0);
   background: #f7f7f7;
   width: 100%;
+  padding: rem-calc(28) 0;
+
 
   p {
     width: 76%;
+    margin-bottom: rem-calc(24);
   }
 
   // formulier
   .contact-form {
     width: 100%;
 
-    button.book-now {
-      margin-top: rem-calc(12);
+    button  {
+      margin-top: rem-calc(28);
     }
 
     // Container voor de input en label tags
@@ -54,6 +56,7 @@ input, select, textarea {
         padding-bottom: rem-calc(8);
       }
     }
+
 
     // Label controle
     .field-label {
@@ -103,6 +106,8 @@ input, select, textarea {
       bottom: rem-calc(6);
       left: 0;
       background-color: #DDD;
+      //background: #c6c6c6;
+
     }
 
     .field-label::after {

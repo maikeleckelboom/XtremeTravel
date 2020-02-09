@@ -10,9 +10,9 @@
     <!-- Fontawesomem 5 import -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <!-- Title -->
-    <title>Grid-layout</title>
+    <title>XtreemTravel | Home</title>
 </head>
-<body>
+<body class="light">
 
 <!-- Omliggende grid container -->
 <div class="grid-container">
@@ -24,7 +24,20 @@
         <div class="sub-grid">
 
             <!-- Logo -->
-            <a href="grid.html" class="logo"><span>X</span>treemTravel</a>
+<!--        <a href="index.html" class="logo"><span>X</span>treemTravel</a>-->
+            <div class="header-logo">
+                <div class="clip-text clip-text_one" id="logo">X</div>
+            </div>
+
+                        <!-- Zoekbalk -->
+<!--            &lt;!&ndash; Zoekbalk &ndash;&gt;-->
+<!--            <div class="search-container">-->
+<!--                <form class="search-form">-->
+<!--                    <input type="search" class="search" placeholder="Zoek naar bestemmingen..." title="">-->
+<!--                    <button class="go"><span class="entypo-search exception"></span></button>-->
+<!--                </form>-->
+<!--            </div>-->
+
 
             <!-- Hamburger Menu -->
             <input class="menu-btn" type="checkbox" id="menu-btn">
@@ -33,64 +46,178 @@
             </label>
 
             <!-- Menu navigatie lijst -->
-            <ul class="menu">
-                <li class="on-mobile"><a href="index.html">Home</a></li>
-                <li><a href="pages/windsurfing.html">Windsurfing</a></li>
-                <li><a href="pages/mountainclimbing.html">Mountainclimbing</a></li>
-                <li><a href="pages/snorkelen.html">Snorkelen</a></li>
-                <li><a href="pages/lastminutes.html">Last minutes</a></li>
-                <li class="on-mobile"><a href="#">Over ons</a></li>
-                <li class="on-mobile"><a href="#">Contact</a></li>
-            </ul>
+            <div class="navigation">
+                <ul class="menu">
+                    <li><a href="index.html" class="link active js-hover">Home</a></li>
+                    <!--                                        <li><a href="pages/windsurfing.html" class="link">Windsurfing</a></li>-->
+                    <!--                                        <li><a href="pages/mountainclimbing.html" class="link">Mountain climbing</a></li>-->
+                    <!--                                        <li><a href="pages/snorkelen.html" class="link">Snorkelen</a></li>-->
+                    <li><a href="pages/windsurfing.html" class="link">Last minutes</a></li>
+                    <li><a href="pages/mountainclimbing.html" class="link">Business trips</a></li>
+                    <li><a href="pages/about.html" class="link">Over ons</a></li>
+                </ul>
+            </div>
+
 
         </div>
     </header>
 
 
-    <!-- Parallax.js voor een parallax effect op de banner -->
+    <!-- Parallax.js  -->
     <div class="parallax">
-        <div class="parallax-window" data-parallax="scroll" data-image-src="files/climbing.jpg">
-
-            <!-- Subgrid -->
-            <div class="sub-grid">
-
-                <!-- Overliggend tekstblok (welkom tekst)-->
-                <div class="callout">
-
-                    <p>
-                        Welkom bij <span>X</span>treemTravel, de online booking website voor de extreemste vakanties.
-                        <a href="#">Boek je vakantie nu</a> voor de voordeligste bestemmingen.
-                        Ons specialisme: de actiefste vakanties op alle continenten
-                    </p>
-
-                    <ul class="checkmark">
-                        <li><a href="pages/windsurfing.html">Windsurfers</a></li>
-                        <li><a href="pages/snorkelen.html">Snorkelaars</a></li>
-                        <li><a href="pages/mountainclimbing.html">Mountainclimbers</a></li>
-                    </ul>
-
-                    <i class="fas fa-route"></i>
-                </div>
-            </div>
-        </div>
+        <div class="paralax-overlay"></div>
+        <div class="parallax-window"></div>
     </div>
 
 
     <aside>
-        <!-- Call to action button -->
-        <button type='button' class="button"><a href="pages/lastminutes.html">Last Minutes</a></button>
-        <span>Extra voordeel met de Last Minutes</span>
+
+        <div class="sub-grid">
+            <div class="logo-container">
+                <h1>Welkom bij</h1>
+                <div class="clip-text clip-text_one">XtremeTravel</div>
+            </div>
+
+            <div class="callout-container">
+                <p class="title">De online booking website voor de extreemste vakanties</p>
+                <p class="sub-title">Ons specialisme: de actiefste vakanties op alle continenten</p>
+            </div>
+
+        </div>
+
     </aside>
 
 
     <div class="content">
-        <!-- Call to action buttons -->
-        <button type='button' class="button"><a href="#">Over ons</a></button>
-        <button type='button' class="button"><a href="#contact" class="smooth-scroll">Contact</a></button>
+
+        <div class="tabs-container">
+            <input type="radio" name="tabs" id="tab_1" checked>
+            <div class="tab-label-content" id="tab_1-content">
+                <div class="sub-container">
+                    <label for="tab_1" class="material button">
+                        <span>Windsurfing</span>
+                    </label>
+                    <div class="tab-content">
+                        <div class="image-container">
+                            <img src='files/xtreme7.jpg' class="card-image" alt="">
+                        </div>
+                        <h3>Windsurfing</h3>
+                        Tien dagen inclusief alles. Geniet van het
+                        populairste hotel bij surfers: Hotel Vientos.
+                        <!-- Card actie buttons -->
+                        <div class="card-actions">
+                            <div class="book-info">
+                                <div class="card-price">
+                                    <span class="price">€229</span>
+                                    <span class="price-attr">per week</span>
+                                </div>
+
+                                <div class="rating">
+                                    <label class="exception"></label>
+                                    <label class="exception"></label>
+                                    <label class="exception"></label>
+                                    <label class="exception"></label>
+                                </div>
+                            </div>
+                            <div class="secondary-buttons">
+                                <a href="pages/mountainclimbing.html" class="material-btn">Lees meer</a>
+                                <a href="pages/mountainclimbing.html" class="material-btn">Lees meer</a>
+                            </div>
+                            <a href="pages/snorkelen.html">
+                                <button type='button' class='button card-action-read-more book-now material'>Boek Nu
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="radio" name="tabs" id="tab_2">
+            <div class="tab-label-content" id="tab_2-content">
+                <label for="tab_2" class="material button">
+                    <span>Mountain climbing</span>
+                </label>
+                <div class="tab-content grid-block">
+                    <div class="image-container">
+                        <img src='files/xtreme2.jpg' class="card-image" alt="">
+                    </div>
+                    <h4>Mountain climbing</h4>
+                    klimtocht naar 8000 meter hoogte onder begeleiding van experts. Na de tien dagen lange tocht
+                    geniet
+
+                    <!-- Card actie buttons -->
+                    <div class="card-actions">
+                        <div class="book-info">
+                            <div class="card-price">
+                                <span class="price">€229</span>
+                                <span class="price-attr">per week</span>
+                            </div>
+
+                            <div class="rating">
+                                <label class="exception"></label>
+                                <label class="exception"></label>
+                                <label class="exception"></label>
+                                <label class="exception"></label>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <a href="pages/mountainclimbing.html" class="button-outlined">Lees meer</a>
+                        </div>
+                        <a href="pages/snorkelen.html">
+                            <button type='button' class='button card-action-read-more book-now material'>Boek Nu
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <input type="radio" name="tabs" id="tab_3" title="">
+            <div class="tab-label-content" id="tab_3-content">
+                <label for="tab_3" class="material button">
+                    <span>Snorkelen</span>
+                </label>
+                <div class="tab-content">
+                    <img src='files/xtreme5.jpg' class="card-image" alt="">
+                    <h4>Snorkelen</h4>
+                    Dit pakket is de beste combinatie: natuurreservaten en koraalrif. Speciale aanbieding voor
+                    backpackers.
+                    <!-- Card actie buttons -->
+                    <div class="card-actions">
+                        <div class="book-info">
+                            <div class="card-price">
+                                <span class="price">€229</span>
+                                <span class="price-attr">per week</span>
+                            </div>
+
+                            <div class="rating">
+                                <label class="exception"></label>
+                                <label class="exception"></label>
+                                <label class="exception"></label>
+                                <label class="exception"></label>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <a href="pages/mountainclimbing.html" class="button-outlined">Lees meer</a>
+                        </div>
+                        <a href="pages/snorkelen.html">
+                            <button type='button' class='button card-action-read-more book-now material'>Boek Nu
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="slide"></div>
+
+        </div>
+
+
     </div>
 
-
     <main class="home">
+
         <!-- Boekingen sectie -->
         <div class="bookings">
             <h1>Boekingen</h1>
@@ -106,16 +233,28 @@
 
                 <!-- Card beschrijving -->
                 <div class="card-desc">
-                    klimtocht naar 8000 meter hoogte onder begeleiding van experts. Na de tien dagen lange tocht geniet
-                </div>
-                <div class="card-price">
-                    <span>€799,00</span>
+                    klimtocht naar 8000 meter hoogte onder begeleiding van experts. Na de tien dagen lange tocht
+                    geniet
                 </div>
 
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <button type='button' class='card-action-read-more'>Lees Meer</button>
-                    <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
+                    <div class="book-info">
+                        <div class="card-price">
+                            <span class="price">€229</span>
+                            <span class="price-attr">per week</span>
+                        </div>
+
+                        <div class="rating">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
+                    </div>
+                    <a href="pages/snorkelen.html">
+                        <button type='button' class='button card-action-read-more book-now material'>Boek Nu</button>
+                    </a>
                 </div>
             </div>
 
@@ -135,16 +274,24 @@
                     Tien dagen inclusief alles. Geniet van het
                     populairste hotel bij surfers: Hotel Vientos.
                 </div>
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€380,00</span>
-                </div>
 
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <button type='button' class='card-action-read-more'><a href="pages/windsurfing.html">Lees Meer</a>
-                    </button>
-                    <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
+                    <div class="book-info">
+                        <div class="card-price">
+                            <span class="price">€129</span>
+                            <span class="price-attr">per week</span>
+                        </div>
+
+                        <div class="rating">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
+                    </div>
+                    <a href="pages/windsurfing.html">
+                        <button type='button' class='button card-action-read-more book-now'>Boek Nu</button>
+                    </a>
                 </div>
 
             </div>
@@ -153,7 +300,7 @@
             <div class="card">
 
                 <!-- Card afbeelding -->
-                <img src='files/wakeboarden.jpg' class="card-image" alt="">
+                <img src="files/wakeboarden.jpg" class="card-image" alt="">
 
                 <!-- Card titel -->
                 <div class="card-title">
@@ -166,22 +313,27 @@
                     backpackers.
                 </div>
 
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€499,99</span>
-                </div>
-
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <button type='button' class='card-action-read-more'>Lees Meer</button></a>
-                    <button type='button' class='card-action-read-more book-now'>Boek Nu</button>
+                    <div class="book-info">
+                        <div class="card-price">
+                            <span class="price">€199</span>
+                            <span class="price-attr">per week</span>
+                        </div>
+
+                        <div class="rating">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
+                    </div>
+                    <a href="pages/mountainclimbing.html">
+                        <button type='button' class='button card-action-read-more book-now'>Boek nu</button>
+                    </a>
                 </div>
             </div>
-
-
-            <!-- Horizontale lijn liegtuig circel -->
-            <span class="hr-line">
-            </span>
 
         </div>
 
@@ -194,7 +346,7 @@
             <div class="card">
 
                 <!-- Card afbeelding -->
-                <img src='files/climbing.jpg' class="card-image" alt="">
+                <img src='files/xtreme1.jpg' class="card-image" alt="">
 
                 <!-- Card titel -->
                 <div class="card-title climbing">
@@ -206,17 +358,33 @@
                     Deze week vertrekt een groep enthousiaste klimmers nar de Himalayas.
                 </div>
 
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€380,00</span>
-                </div>
-
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <a href="pages/mountainclimbing.html"><button type='button' class='card-action-read-more'>Lees Meer</button></a>
-                    <a href="pages/mountainclimbing.html"><button type='button' class='card-action-read-more book-now'>Boek Nu</button></a>
+
+                    <!-- Prijs boeking info -->
+                    <div class="book-info">
+                        <div class="card-price">
+                            <span class="price">€299</span>
+                            <span class="price-attr">per week</span>
+                        </div>
+
+                        <!-- Rating 1 / 5 sterren -->
+                        <div class="rating">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
+                    </div>
+
+                    <!-- Boek nu button -->
+                    <a href="pages/mountainclimbing.html">
+                        <button type='button' class='button card-action-read-more book-now'>Boek Nu</button>
+                    </a>
                 </div>
             </div>
+
 
             <!-- Card item -->
             <div class="card">
@@ -234,19 +402,29 @@
                     Deze maand is het aantrekkelijkst voor Windsurfing in Cancun, Mexico.
                 </div>
 
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€599,00</span>
-                </div>
-
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <div class="card-actions">
-                        <a href="pages/windsurfing.html"><button type='button' class='card-action-read-more'>Lees Meer</button></a>
-                        <a href="pages/windsurfing.html"><button type='button' class='card-action-read-more book-now'>Boek Nu</button></a>
+
+                    <div class="book-info">
+                        <div class="card-price">
+                            <span class="price">€349</span>
+                            <span class="price-attr">per week</span>
+                        </div>
+
+                        <div class="rating">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
                     </div>
+
+                    <a href="pages/windsurfing.html">
+                        <button type='button' class='button card-action-read-more book-now'>Boek Nu</button>
+                    </a>
                 </div>
+
             </div>
+
 
             <!-- Card item -->
             <div class="card">
@@ -265,20 +443,34 @@
                     koraalrif.
                 </div>
 
-                <!-- Card prijs -->
-                <div class="card-price">
-                    <span>€499,00</span>
-                </div>
 
                 <!-- Card actie buttons -->
                 <div class="card-actions">
-                    <a href="pages/snorkelen.html"><button type='button' class='card-action-read-more'>Lees Meer</button></a>
-                    <a href="pages/snorkelen.html"><button type='button' class='card-action-read-more book-now'>Boek Nu</button></a>
+
+                    <div class="book-info">
+                        <div class="card-price">
+                            <span class="price">€499</span>
+                            <span class="price-attr">per week</span>
+                        </div>
+
+                        <div class="rating">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
+                    </div>
+
+                    <a href="pages/snorkelen.html">
+                        <button type='button' class='button card-action-read-more book-now'>Boek Nu</button>
+                    </a>
                 </div>
+
             </div>
 
 
         </div>
+
 
     </main>
 
@@ -294,7 +486,8 @@
                 <h1>Stel ons jouw vragen</h1>
 
                 <p>
-                    Toch nog iets meer weten over een bepaalde reis, of een algemene vraag over de reizen op deze site?
+                    Toch nog iets meer weten over een bepaalde reis, of een algemene vraag over de reizen op deze
+                    site?
                     Laat
                     het ons weten!
                 </p>
@@ -337,32 +530,85 @@
     <!-- Footer met sub-grid -->
     <footer>
         <div class="sub-grid">
-            <div class="cell">
-                <h3>Privacy</h3>
+
+            <div class="cell navigation">
+                <h3>Bestemmingen</h3>
                 <ul>
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
-                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Azië</a></li>
+                    <li><a href="#">Zuid-Amerika</a></li>
+                    <li><a href="#">Europa</a></li>
+                    <li><a href="#">Noord-Amerika</a></li>
+                    <li><a href="#">Afrika</a></li>
+                    <li><a href="#">Oceanië</a></li>
+
                 </ul>
             </div>
-            <div class="cell">
-                <h3>Disclaimer</h3>
+
+
+            <div class="cell navigation">
+                <h3>Thema’s</h3>
                 <ul>
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
-                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Huwelijksreis</a></li>
+                    <li><a href="#">Duikreis</a></li>
+                    <li><a href="#">Safari</a></li>
+                    <li><a href="#">Natuurreis</a></li>
+                    <li><a href="#">Actief en avontuurlijk</a></li>
+                    <li><a href="#">Huurauto of camper</a></li>
                 </ul>
             </div>
-            <div class="cell">
-                <h3>Links</h3>
+
+            <div class="cell navigation">
+                <h3>Over ons</h3>
                 <ul>
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
-                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Het Team</a></li>
+                    <li><a href="#">Contacteer Ons</a></li>
+                    <li><a href="#">Brochures</a></li>
+                    <li><a href="#">Waarom XtremeTravel</a></li>
+                    <li><a href="#">Onze Events</a></li>
+                    <li><a href="#">Hoe wij werken</a></li>
+
                 </ul>
+            </div>
+
+            <div class="cell navigation">
+                <h3>Algemeen</h3>
+                <ul>
+                    <li><a href="#">Voorwaarden</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="cell navigation">
+                <h3>Theme switcher</h3>
+                <ul>
+                    <li>
+                        <div class="buttonContainer">
+                            <button class="button theme1">Light Theme</button>
+                            <button class="button theme2">Dark Theme</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="cell">
+                <!--                <div class="switch">-->
+                <!--                    <input type="checkbox" id="switch1" class="switch__input" checked>-->
+                <!--                    <label for="switch1" class="switch__label">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg"-->
+                <!--                             xmlns:xlink="http://www.w3.org/1999/xlink"-->
+                <!--                             aria-hidden="true" focusable="false"-->
+                <!--                             width="3em" height="3em"-->
+
+                <!--                             preserveAspectRatio="xMidYMid meet"-->
+                <!--                             viewBox="0 0 24 24">-->
+                <!--                            <path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5l1.43 1.43L4.93 20.5L3.5 19.07L19.07 3.5m-6.18 2.43L11.41 5L9.97 6l.42-1.7L9 3.24l1.75-.12l.58-1.65L12 3.1l1.73.03l-1.35 1.13l.51 1.67m-3.3 3.61l-1.16-.73l-1.12.78l.34-1.32l-1.09-.83l1.36-.09l.45-1.29l.51 1.27l1.36.03l-1.05.87l.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58l2.77-1.15l-.24 3.35l-2.53-2.2m4.33-2.7l1.15-2.77l2.2 2.54l-3.35.23m1.15-4.96l-1.14-2.78l3.34.24l-2.2 2.54M9.63 18.93l2.77 1.15l-2.53 2.19l-.24-3.34z" fill="#626262"/>-->
+                <!--                        </svg>-->
+                <!--                    </label>-->
+                <!--                </div>-->
+
+
             </div>
         </div>
     </footer>
@@ -370,6 +616,29 @@
 </div>
 
 
+<script>
+
+
+    let countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+
+</script>
+<script>
+    $('.logo').hover(
+        function () {
+            $('.js-hover').addClass('hover');
+        },
+        function () {
+            $('.js-hover').removeClass('hover');
+        }
+    )
+</script>
+<!-- Parallax Custom js -->
+<script src="js/parallaxCustom.js"></script>
+<!-- Tabs.js -->
+<script src="js/tabs.js"></script>
+<!-- App.js -->
+<script src="js/app.js"></script>
 <!-- Scroll Functions -->
 <script src="js/scroll.js"></script>
 <!-- Ripple Effect -->

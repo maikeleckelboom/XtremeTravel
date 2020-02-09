@@ -12,4 +12,4 @@
 #### Atomic Design
 ##### http://atomicdesign.bradfrost.com/chapter-2/
 ### Parallax.js
-##### https://pixelcog.github.io/parallax.js/
+##### https://pixelcog.github.io/parallaxCustom.js/

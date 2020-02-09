@@ -1,28 +1,75 @@
 @import '../abstracts/base';
 
+.navigation {
+  ul li a {
+    @include transitionEaseAll02s;
+  }
+
+  &:hover {
+    ul li a {
+      opacity: 0.4;
+    }
+
+    &.logo {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    ul:hover a {
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .header {
-  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) 0 rgba(0,0,0,.1);
+  position: fixed;
+  background: $white;
+
+  box-shadow: 0 rem-calc(2) rem-calc(4) rgba(0, 0, 0, .5);
   width: 100%;
-  height: rem-calc(60);
-  background: white;
-  z-index: 3;
+  height: rem-calc(68);
+  z-index: 103;
+  overflow: hidden;
+
+  &.nav-up {
+    transform: translateY(-100%);
+    transition: transform .3s cubic-bezier(.4, 0, .6, 1), opacity 0s .3s;
+    opacity: 0;
+  }
+
+  &.nav-down {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform .3s cubic-bezier(.4, 0, .2, 1) .3s, opacity 0s .3s;
+  }
+
+  .js-hover.hover {
+    opacity: 1.0;
+  }
+
 
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background: #fff;
 
     a {
-      display: block;
-      padding: rem-calc(20) rem-calc(20);
-      border-right: rem-calc(1) solid #f4f4f4;
-      text-decoration: none;
-      color: #000;
+      // Material button stroked border
+      @include material-btn-stroke;
+      border: none;
+      line-height: initial;
     }
 
-    li a:hover,
+    li svg {
+      height: 40px;
+    }
+
     .menu-btn:hover {
       background: #f4f4f4;
     }
@@ -33,18 +80,51 @@
 
   }
 
-  .logo {
-    display: block;
-    float: left;
-    font-size: rem-calc(32);
-    padding: rem-calc(10) rem-calc(20);
-    text-decoration: none;
+  // Anchor link hover animation
+  .link {
+    display: inline-block;
     color: #000;
-    span {
-      color: #ff3840;
-      font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      opacity: .1;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: rem-calc(4);
+      background: $purpleblue;
+      transition: width .3s;
+      margin-top: rem-calc(4);
+    }
+
+    &:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    &.active::after {
+      width: 100%;
+      transition: width .3s;
     }
   }
+
+  //.logo {
+  //  display: block;
+  //  float: left;
+  //  font-size: rem-calc(34);
+  //  padding: rem-calc(10) rem-calc(20);
+  //  text-decoration: none;
+  //  line-height: 1.2;
+  //  mix-blend-mode: screen;
+  //
+  //  span {
+  //    color: #ff3840;
+  //    font-weight: 600;
+  //  }
+  //}
 
   .menu {
     clear: both;
@@ -63,10 +143,10 @@
     .nav-icon {
       background: #333;
       display: block;
-      height: 2px;
+      height: rem-calc(2);
       position: relative;
       transition: background .2s ease-out;
-      width: 18px;
+      width: rem-calc(18);
 
       &::before, &::after {
         background: #333;
@@ -109,6 +189,8 @@
           }
         }
 
+
+        // Uitzonder class .steps (na en voor de animatie)
         &:not(.steps) .nav-icon::before,
         &:not(.steps) .nav-icon::after {
           top: 0;
@@ -116,10 +198,16 @@
       }
     }
   }
+
+  .clip-text {
+    font-size: rem-calc(22);
+    margin-top: 7px;
+    padding: 14px 20px;
+  }
 }
 
-
-@media (min-width: em-calc(1340)) {
+//1140
+@media (min-width: em-calc(868)) {
   .center {
     width: 80%;
     margin: 0 auto;

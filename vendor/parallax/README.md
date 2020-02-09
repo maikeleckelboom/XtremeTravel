@@ -2,20 +2,20 @@ Parallax.js
 ===========
 
 Simple parallax scrolling effect inspired by [Spotify.com](http://spotify.com/) implemented as a jQuery plugin  
-[http://pixelcog.com/parallax.js/](http://pixelcog.com/parallax.js/)
+[http://pixelcog.com/parallaxCustom.js/](http://pixelcog.com/parallax.js/)
 
 ## Installation
 
 ### NPM
 
 ```bash
-npm i --save jquery-parallax.js
+npm i --save jquery-parallaxCustom.js
 ```
 
 ### Yarn
 
 ```bash
-yarn add jquery-parallax.js
+yarn add jquery-parallaxCustom.js
 ```
 
 ### Bower
@@ -23,7 +23,7 @@ yarn add jquery-parallax.js
 Please note that although Bower is still maintained, they recommend Yarn for new projects.
 
 ```bash
-$ bower i --save parallax.js
+$ bower i --save parallaxCustom.js
 ```
 
 ### Setup
@@ -38,7 +38,7 @@ Include `parallax.min.js` in your document after including jQuery (compatible wi
 Use these CDN links, provided by jsDelivr.com
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallaxCustom.js/1.4.2/parallax.min.js"></script>
 ```
 
 ## Usage
@@ -63,7 +63,7 @@ $('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
 
 ### Notes
 
-What parallax.js will do is create a fixed-position element for each parallax image at the start of the document's body (or another configurable container). This mirror element will sit behind the other elements and match the position and dimensions of its target object.
+What parallaxCustom.js will do is create a fixed-position element for each parallax image at the start of the document's body (or another configurable container). This mirror element will sit behind the other elements and match the position and dimensions of its target object.
 
 Due to the nature of this implementation, you must ensure that these parallax objects and any layers below them are transparent so that you can see the parallax effect underneath.  Also, if there is no other content in this element, you will need to ensure that it has some fixed dimensions otherwise you won't see anything.
 
@@ -213,7 +213,7 @@ If you have a pull request you would like to submit, please ensure that you upda
 
 Please use the following command:
 
-	uglifyjs parallax.js --comments -m -c -o parallax.min.js
+	uglifyjs parallaxCustom.js --comments -m -c -o parallax.min.js
 
 
 LICENSE

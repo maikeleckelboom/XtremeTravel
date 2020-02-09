@@ -1,11 +1,20 @@
 @import '../abstracts/base';
 
+.button-container {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: rem-calc(8);
+  }
+}
+
 // Primray button styles
 .button {
   margin: rem-calc(8) 0 rem-calc(8) rem-calc(8);
   height: rem-calc(38);
-  width: rem-calc(128);
-  background: #2a49a5;
+  background: $purpleblue;
+
   color: #fff;
   border: none;
   position: relative;
@@ -14,7 +23,15 @@
   border-radius: rem-calc(3);
   text-transform: uppercase;
   font-weight: 600;
-  transition: box-shadow 0.3s ease-in;
+  transition: all 50ms ease-in, box-shadow 0.3s ease-in;
+  font-size: rem-calc(12);
+  justify-content: center;
+  align-items: center;
+
+  .tab-content & {
+    border-radius: 0;
+  }
+
 
   &:hover {
     background: transparentize(#3156d4, 0.2);
@@ -23,15 +40,132 @@
     color: white;
   }
 
+
+  span {
+    position: relative;
+    z-index: 9999;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+
   a {
     color: #fff;
     text-decoration: none;
     display: block;
     line-height: rem-calc(38);
+    font-size: rem-calc(12);
+    width: 100%;
   }
 }
 
 
+.button-outlined {
+  font-family: 'Roboto', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .09375rem;
+  border: solid rem-calc(1) #b47fff;
+  color: #b47fff;
+  padding: rem-calc(8) rem-calc(8);
+  border-radius: rem-calc(3);
+  font-size: rem-calc(12);
+}
+
+
+
+.material-button-outline {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: rem-calc(12);
+  line-height: 2.25rem;
+  letter-spacing: .09375rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background: none;
+  //border: rem-calc(1) solid #3c4043;
+  //color: #3868ff;
+  //color:#ff82f7;
+  //color: #ff0266;
+  //color: #0072ff;
+  color: #4ea2ff;
+  display: inline-flex;
+  //padding: 0 rem-calc(16) rem-calc(1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  border: none;
+  padding: 0;
+  margin: rem-calc(4) 0;
+
+
+  &.borderless {
+    border: none;
+    padding-left: 0;
+  }
+
+}
+
+
+.material-btn {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 2.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #3c4043;
+  color: $black;
+  display: inline-flex;
+  padding: 0 rem-calc(16) rem-calc(1);
+  font-size: 14px;
+  letter-spacing: .09375rem;
+  min-width: rem-calc(92);
+  width: auto;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: rem-calc(4);
+  @include transitionEaseAll02s;
+
+  // Witte overlay met 18% opacity
+  &:hover {
+    background: rgba(255, 255, 255, 0.18);
+    @include transitionEaseAll02s;
+  }
+}
+
+.material {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 rem-calc(16) rem-calc(1);
+  letter-spacing: .09375rem;
+  cursor: pointer;
+  display: flex;
+
+  &:hover {
+    //background: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.secondary-buttons {
+  margin-top: rem-calc(8);
+}
+
+.go-back {
+}
 
 // Ripple effect
 .ripple {

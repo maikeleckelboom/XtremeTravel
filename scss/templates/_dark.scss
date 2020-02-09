@@ -1,0 +1,134 @@
+@import '../abstracts/base';
+
+body {
+  &.dark {
+    background: $black;
+
+    h1, h2, h3,
+    h4, h5, h6,
+    p, span:not(.exception),
+    ul li a {
+      color: $white;
+    }
+
+    .header {
+      background: $black;
+      color: $white;
+
+      ul.menu {
+        background: $black;
+      }
+
+      ul li a {
+        color: $white;
+      }
+
+      .logo {
+        color: $white;
+      }
+
+      .menu-icon .nav-icon {
+        color: $white;
+
+        &::before, &::after {
+          color: $white;
+        }
+
+      }
+    }
+
+
+    .header .menu-icon .nav-icon,
+    .header .menu-icon .nav-icon::before,
+    .header .menu-icon .nav-icon::after {
+      background: $white;
+    }
+
+    .footer {
+      background: $black;
+      color: $white;
+      box-shadow: rem-calc(5) rem-calc(3) rem-calc(3) rem-calc(1) $white;
+    }
+
+    .contact {
+      background: #272727;
+
+      .material-type-form {
+        background: $lightblack;
+        color: $white;
+      }
+
+      .field-label::after,
+      .field::before {
+        //background-color: $white;
+        //background: #c6c6c6;
+      }
+
+      h1, p {
+        color: $white;
+      }
+    }
+
+    .card {
+      background: #171616;
+      background: none;
+      border: none;
+
+      p {
+        color: $white;
+      }
+
+      &-title {
+        color: $white;
+      }
+
+      &-desc {
+        border: none;
+        background: none;
+      }
+
+      &-desc, &-action-read-more {
+        color: $white;
+      }
+
+    }
+
+    .hr-line {
+      background: $white;
+    }
+
+    .contact-form .field-label {
+      color: #c6c6c6;
+    }
+
+    .tabs-container {
+      color: $white;
+    }
+
+    .material-btn {
+      color: $white;
+    }
+
+    .tab-label-content {
+      label {
+        color: $white;
+      }
+    }
+
+    input[type="radio"][name="tabs"] {
+      &:checked {
+        + .tab-label-content {
+          label {
+            color: $white;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  &.light {
+    color: $black;
+  }
+}
